@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实验阶段</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .content .title {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .title .blue {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+        
+        .content .body {
+            width: 95%;
+            height: calc(100% - 70px);
+        }
+        
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .content table thead {
+            height: 40px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table tbody {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table span {
+            margin: 0 10px;
+        }
+        
+        .content table th,
+        .content table td {
+            height: 40px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+        
+        .content table td span {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        
+        select {
+            width: 125px;
+            height: 35px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="blue"></div>
+            <span>实验阶段</span>
+        </div>
+        <div class="body">
+            <form action="/demo/Expconfiguration" method="post">
+                <input type="hidden" id="detailId" name="id" />
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">实验场次</th>
+                                <th colspan="2">阶段1</th>
+                                <th colspan="2">阶段2</th>
+                                <th colspan="2">阶段3</th>
+                                <th rowspan="2">阶段4</th>
+                                <th rowspan="2">阶段5</th>
+                            </tr>
+                            <tr>
+                                <th>实验局</th>
+                                <th>数据</th>
+                                <th>实验局</th>
+                                <th>数据</th>
+                                <th>实验局</th>
+                                <th>数据</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="testSessionId">第rdata[0].testSessionId 场</td>
+                                <td>
+                                    <select teststageid="1" name="fundDataType" id="fundDataType">
+                                        <option value = '1'>基准</option>
+                                        <option value = '2'>业绩</option>
+                                        <option value = '3'>排名</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select teststageid="1" name="fundGroup" id="fundGroup"> 
+                                        <option value = 'A'>A</option> 
+                                        <option value = 'B'>B</option> 
+                                        <option value = 'C'>C</option> 
+                                    </select>
+                                </td>
+                                <td>
+                                    <select teststageid="2" name="fundDataType" id="fundDataType">
+                                        <option value = '1'>基准</option>
+                                        <option value = '2'>业绩</option>
+                                        <option value = '3'>排名</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select teststageid="2" name="fundGroup" id="fundGroup"> 
+                                        <option value = 'A'>A</option> 
+                                        <option value = 'B'>B</option> 
+                                        <option value = 'C'>C</option> 
+                                    </select>
+                                </td>
+                                <td>
+                                    <select teststageid="3" name="fundDataType" id="fundDataType">
+                                        <option value = '1'>基准</option>
+                                        <option value = '2'>业绩</option>
+                                        <option value = '3'>排名</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select teststageid="3" name="fundGroup" id="fundGroup"> 
+                                        <option value = 'A'>A</option> 
+                                        <option value = 'B'>B</option> 
+                                        <option value = 'C'>C</option> 
+                                    </select>
+                                </td>
+                                <td><a href=''>彩票出示</a></td>
+                                <td><a href=''>问卷</a></td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script>
+        // $(function() {
+        //     init()
+        // })
+        function render(rdata) {
+            rdata.splice(3, 2)
+            console.log("+++++++");
+            console.log(rdata);
+            $('#testSessionId').text('第' + rdata[0].testSessionId + '场')
+            $.each(rdata, function(index, value) {
+                $('select[teststageid="' + value.testStageId + '"][id="fundDataType"]').val(value.fundDataType);
+                $('select[teststageid="' + value.testStageId + '"][id="fundGroup"]').val(value.fundGroup);
+            })
+        }
+
+        function getForm() {
+            var data = {};
+            stageList = [];
+            for (i = 1; i <= 3; i++) {
+                stageList.push({
+                    testStageId: i,
+                    fundDataType: $('select[teststageid="' + i + '"][id="fundDataType"]').val(),
+                    fundGroup: $('select[teststageid="' + i + '"][id="fundGroup"]').val()
+                })
+            }
+            data.stageList = stageList;
+            return data;
+        }
+    </script>
+</body>
+
+</html>

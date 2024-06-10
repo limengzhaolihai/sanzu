@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.TesteeScheduleMapper">
+    <!--<insert id="addTestSchedule" parameterType="TesteeSchedule">-->
+    <!--insert into jsexp.testee_schedule (TESTEE_ID, TEST_ID, TEST_SESSION_ID, TEST_STAGE_ID, TEST_ROUND_ID,START_END)-->
+    <!--values (#{testee_Id},#{test_Id},#{test_Session_Id},#{test_Stage_Id},#{test_Round_Id},#{start_end});-->
+    <!--</insert>-->
+
+    <update id="UpdateTestScheduleById" parameterType="TesteeSchedule">
+        update jsexp.testee_schedule
+        set `TESTEE_LOGIN` = '1'
+        where TESTEE_ID = #{testee_Id}
+          and TESTEE_LOGIN = '0'
+    </update>
+
+    <update id="UpdateTestScheduleRound" parameterType="TesteeSchedule">
+        update jsexp.testee_schedule
+        set TEST_ROUND_ID = #{test_Round_Id}
+        where TESTEE_ID = #{testee_Id} and TESTEE_LOGIN = '1'
+    </update>
+
+    <update id="UpdateTestScheduleStage" parameterType="TesteeSchedule">
+        update jsexp.testee_schedule
+        set TEST_STAGE_ID = #{test_Stage_Id},TEST_ROUND_ID = #{test_Round_Id}
+        where TESTEE_ID = #{testee_Id} and TESTEE_LOGIN = '1'
+    </update>
+
+
+    <select id="queryTestScheduleById" resultType="TesteeSchedule">
+        select *
+        from jsexp.testee_schedule
+        where TESTEE_ID = #{testee_Id}
+    </select>
+</mapper>

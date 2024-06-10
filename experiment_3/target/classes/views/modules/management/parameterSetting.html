@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参数设置</title>
+    <link rel="stylesheet" href="../../../static/css/common2.css" />
+    <style>
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .content .title {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .title .blue {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+        
+        .content .body {
+            width: 50%;
+            height: calc(100% - 70px);
+        }
+        
+        .content .body .box {
+            width: 100%;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .body .box div {
+            width: 100%;
+            height: 60px;
+        }
+        
+        .content .body .box .box-title {
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 23px;
+            letter-spacing: 1px;
+            color: #0256FF;
+            line-height: 60px;
+        }
+        
+        .content .body .box .box-input {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content .body .box .box-input input {
+            width: 360px;
+            height: 45px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+            margin: 0 10px;
+            padding-left: 10px;
+        }
+        
+        .content .body .box .box-input label {
+            width: 250px;
+            text-align: right;
+        }
+        
+        .content .body .btn {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+        
+        .content .body .btn button {
+            width: 300px;
+            height: 80px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="blue"></div>
+            <span>全局参数设置</span>
+        </div>
+        <div class="body">
+            <!-- 需修改1：保存接口（action） -->
+            <!-- 需修改2：表单各行name -->
+            <form action="" method="post">
+                <div class="box">
+                    <div class="box-title">限时参数设置</div>
+                    <div class="box-input">
+                        <label>实验阶段限时：</label>
+                        <input type="text" name="实验阶段限时" value="15" />分钟
+                    </div>
+                    <div class="box-input">
+                        <label>实验开始等待时间：</label>
+                        <input type="text" name="实验开始等待时间" value="10" />秒
+                    </div>
+                    <div class="box-input">
+                        <label>个人资产配置页面限时：</label>
+                        <input type="text" name="个人资产配置页面限时" value="25" />秒
+                    </div>
+                    <div class="box-input">
+                        <label>每阶段收益等待时间：</label>
+                        <input type="text" name="每阶段收益等待时间" value="10" />秒
+                    </div>
+                    <div class="box-input">
+                        <label>实验阶段间等待时间：</label>
+                        <input type="text" name="实验阶段间等待时间" value="30" />秒
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-title">收益参数设置</div>
+                    <div class="box-input">
+                        <label>出场费：</label>
+                        <input type="text" name="出场费" />元
+                    </div>
+                    <div class="box-input">
+                        <label>努力任务每做正确一题的奖励：</label>
+                        <input type="text" name="努力任务每做正确一题的奖励" />个实验点数
+                    </div>
+                    <div class="box-input">
+                        <label>实验点数与人民币的折算率：</label>
+                        <input type="text" name="实验点数与人民币的折算率" />个实验点数=1人民币
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="submit" id="submit">编辑</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="../../../static/js/jquery-1.8.3.min.js"></script>
+<script src="../../../static/js/layer/layer.js"></script>
+<script src="../../../static/js/layer/layui/layui.js"></script>
+<script>
+    $(function() {
+        init();
+    })
+
+    function init() {
+        var url = "../mgtController/selectGlobalConfig"
+        myAjax(url, {}, function(res) {
+            console.log(res);
+            render(res.result);
+        })
+    }
+
+    function render(data) {
+        $.each(data, function(index, value) {
+            if (value.configName == "实验阶段限时") {
+                $('input[name=' + value.configName + ']').val((value.configValue) / 60);
+            } else {
+                $('input[name=' + value.configName + ']').val(value.configValue);
+            }
+        })
+
+    }
+
+    function myAjax(url, data, callback) {
+        $.ajax({
+            type: "post",
+            url: url,
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: function(response) {
+                callback(response);
+            }
+        });
+    }
+
+    function getForm() {
+        var data = {
+            configList: [{
+                "configName": "实验阶段限时",
+                "configValue": ($('input[name="实验阶段限时"]').val()) * 60
+            }, {
+                "configName": "实验开始等待时间",
+                "configValue": $('input[name="实验开始等待时间"]').val()
+            }, {
+                "configName": "个人资产配置页面限时",
+                "configValue": $('input[name="个人资产配置页面限时"]').val()
+            }, {
+                "configName": "每阶段收益等待时间",
+                "configValue": $('input[name="每阶段收益等待时间"]').val()
+            }, {
+                "configName": "实验阶段间等待时间",
+                "configValue": $('input[name="实验阶段间等待时间"]').val()
+            }, {
+                "configName": "出场费",
+                "configValue": $('input[name="出场费"]').val()
+            }, {
+                "configName": "努力任务每做正确一题的奖励",
+                "configValue": $('input[name="努力任务每做正确一题的奖励"]').val()
+            }, {
+                "configName": "实验点数与人民币的折算率",
+                "configValue": $('input[name="实验点数与人民币的折算率"]').val()
+            }]
+        };
+        return data;
+    }
+    $('#submit').off().on('click', function() {
+        var data = getForm();
+        var url = "../mgtController/updateGlobalConfig"
+        myAjax(url, data, function(res) {
+            console.log(res);
+            init();
+        })
+        return false;
+    })
+</script>
+
+</html>

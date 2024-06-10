@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.FundInfoMapper">
+    <insert id="insertFundInfo">
+        INSERT INTO `fund_info_table`(`TEST_STAGE_ID`, `FUND_GROUP`, `FUND_ID`, `FUND_NUM`, `PRICE`)
+        VALUES ( #{param.testStageId}
+               , #{param.fundGroup}
+               , #{param.fundId}
+               , #{param.fundNum}, #{param.price});
+    </insert>
+    <update id="updateFundInfoByPkeys">
+        UPDATE `fund_info_table`
+        SET `PRICE` = #{param.price}
+        WHERE `TEST_STAGE_ID` = #{param.testStageId}
+          AND `FUND_GROUP` = #{param.fundGroup}
+          AND `FUND_ID` = #{param.fundId}
+          AND `FUND_NUM` = #{param.fundNum}
+
+    </update>
+    <delete id="deleteFundInfoByPkeys">
+        DELETE
+        FROM `fund_info_table`
+        WHERE `TEST_STAGE_ID` = #{param.testStageId}
+          AND `FUND_GROUP` = #{param.fundGroup}
+          AND `FUND_ID` = #{param.fundId}
+          AND `FUND_NUM` = #{param.fundNum}
+    </delete>
+    <delete id="deleteAllFundInfo">
+        DELETE
+        FROM `fund_info_table`
+    </delete>
+    <select id="listFundInfo" resultType="java.util.Map">
+        SELECT Distinct fund_info_table.TEST_STAGE_ID,
+                        fund_info_table.FUND_GROUP,
+                        fund_info_table.FUND_ID
+        FROM fund_info_table
+    </select>
+    <select id="selectFundInfoByPkeys" resultType="java.util.Map">
+        SELECT fund_info_table.TEST_STAGE_ID,
+               fund_info_table.FUND_GROUP,
+               fund_info_table.FUND_ID,
+               fund_info_table.FUND_NUM,
+               fund_info_table.PRICE
+        FROM fund_info_table
+        WHERE fund_info_table.TEST_STAGE_ID = #{param.testStageId}
+          AND fund_info_table.FUND_GROUP = #{param.fundGroup}
+          AND fund_info_table.FUND_ID = #{param.fundId}
+        ORDER BY LENGTH(fund_info_table.FUND_NUM),
+                 fund_info_table.FUND_NUM
+    </select>
+</mapper>

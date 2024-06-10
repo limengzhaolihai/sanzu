@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.ExperimentSessionMapper">
+
+    <insert id="insertExpSession">
+        INSERT INTO `session_testee_table`(`TEST_ID`, `TEST_SESSION_ID`, `TESTEE_NUM`, `START_END`,
+                                           `FUND_GROUP`, `CREATED_TIME`, `START_TIME`)
+        VALUES (#{param.testId}, #{param.testSessionId}, #{param.testeeNum}, '2', #{param.fundGroup},
+                Now(), #{param.startTime});
+    </insert>
+    <update id="updateExpSession">
+
+        UPDATE `session_testee_table`
+        SET `TEST_ID`         = #{param.testId},
+            `TEST_SESSION_ID` = #{param.testSessionId},
+            `TESTEE_NUM`      = #{param.testeeNum},
+            `START_TIME`      = #{param.startTime},
+            `FUND_GROUP`      = #{param.fundGroup}
+        WHERE `TEST_ID` = #{param.oldTestId}
+          AND `TEST_SESSION_ID` = #{param.oldTestSessionId};
+    </update>
+    <delete id="deleteExpSession">
+        DELETE
+        FROM `session_testee_table`
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </delete>
+    <delete id="deleteExpStage">
+        DELETE
+        FROM `test_session_table`
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </delete>
+    <delete id="deleteSchedule">
+        DELETE
+        FROM `testee_schedule`
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </delete>
+    <select id="listExpSession" resultType="java.util.Map">
+        SELECT stt.TEST_ID,
+               stt.TEST_SESSION_ID,
+               stt.TESTEE_NUM,
+               stt.START_END,
+               stt.FUND_GROUP,
+               stt.CREATED_TIME,
+               stt.START_TIME,
+               MAX(ts.TEST_STAGE_ID) AS TEST_STAGE_ID
+        FROM session_testee_table AS stt,
+             testee_schedule AS ts
+        WHERE stt.TEST_ID = ts.TEST_ID
+          AND stt.TEST_SESSION_ID = ts.TEST_SESSION_ID
+        GROUP BY ts.TEST_ID,
+                 ts.TEST_SESSION_ID
+    </select>
+    <select id="selectExpStage" resultType="java.util.Map">
+        SELECT DISTINCT test_session_table.TEST_SESSION_ID,
+                        test_session_table.FUND_DATA_TYPE,
+                        test_session_table.FUND_GROUP,
+                        test_session_table.TEST_STAGE_ID
+        FROM test_session_table
+        WHERE test_session_table.TEST_ID = #{param.testId}
+          AND test_session_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="selectExpSession" resultType="java.util.Map">
+        SELECT session_testee_table.TEST_ID,
+               session_testee_table.TEST_SESSION_ID,
+               session_testee_table.TESTEE_NUM,
+               session_testee_table.FUND_GROUP,
+               session_testee_table.START_TIME
+        FROM session_testee_table
+        WHERE session_testee_table.TEST_ID = #{param.testId}
+          AND session_testee_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <update id="updateExpStage">
+        UPDATE `test_session_table`
+        SET `FUND_DATA_TYPE` = #{param.fundDataType},
+            `FUND_GROUP`     = #{param.fundGroup}
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId}
+          AND `TEST_STAGE_ID` = #{param.testStageId}
+    </update>
+    <update id="updateTestStartEndTrueByPkeys">
+        UPDATE `session_testee_table`
+        SET `START_END` = 1
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </update>
+    <update id="updateExpStagePkeysByOld">
+        UPDATE `test_session_table`
+        SET `TEST_ID`         = #{param.testId},
+            `TEST_SESSION_ID` = #{param.testSessionId},
+            `FUND_GROUP`      = #{param.fundGroup}
+        WHERE `TEST_ID` = #{param.oldTestId}
+          AND `TEST_SESSION_ID` = #{param.oldTestSessionId};
+    </update>
+    <update id="updateTestStartEndFalseByPkeys">
+        UPDATE `session_testee_table`
+        SET `START_END` = 0
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </update>
+    <update id="updateScheduleStartEndFalseByPkeys">
+        UPDATE `testee_schedule`
+        SET `START_END` = 0
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </update>
+    <update id="updateScheduleStartEndTrueByPkeys">
+        UPDATE `testee_schedule`
+        SET `START_END` = 1
+        WHERE `TEST_ID` = #{param.testId}
+          AND `TEST_SESSION_ID` = #{param.testSessionId};
+    </update>
+    <insert id="insertExpStage">
+        INSERT INTO `test_session_table`(`TEST_ID`, `TEST_SESSION_ID`, `TEST_STAGE_ID`, `TEST_ROUND_ID`,
+                                         `FUND_DATA_TYPE`, `FUND_GROUP`, `CREATED_TIME`)
+        VALUES (#{param.testId}, #{param.testSessionId}, #{param.testStageId}, #{param.testRoundId},
+                #{param.fundDataType}, #{param.fundGroup}, NOW());
+    </insert>
+    <select id="listQuestion" resultType="java.util.Map">
+        SELECT subject_300.Nid,
+               subject_300.Add1,
+               subject_300.Add2,
+               subject_300.SUM
+        FROM subject_300
+    </select>
+    <select id="listReward" resultType="java.util.Map">
+        SELECT stage_income_table.TESTEE_ID,
+               GROUP_CONCAT(CASE
+                                WHEN stage_income_table.TEST_STAGE_ID = '1'
+                                    THEN stage_income_table.STAGE_INCOME END SEPARATOR '') AS stage_one,
+               GROUP_CONCAT(CASE
+                                WHEN stage_income_table.TEST_STAGE_ID = '2'
+                                    THEN stage_income_table.STAGE_INCOME END SEPARATOR '') AS stage_two,
+               GROUP_CONCAT(CASE
+                                WHEN stage_income_table.TEST_STAGE_ID = '3'
+                                    THEN stage_income_table.STAGE_INCOME END SEPARATOR '') AS stage_three,
+               GROUP_CONCAT(CASE
+                                WHEN stage_income_table.TEST_STAGE_ID = '6'
+                                    THEN stage_income_table.STAGE_INCOME END SEPARATOR '') AS reward
+        FROM stage_income_table
+        WHERE stage_income_table.TEST_ID = #{param.testId}
+          AND stage_income_table.TEST_SESSION_ID = #{param.testSessionId}
+        GROUP BY stage_income_table.TESTEE_ID
+
+    </select>
+    <select id="listScheduleByPkeys" resultType="java.util.Map">
+        SELECT testee_schedule.TESTEE_ID,
+               testee_schedule.TEST_STAGE_ID,
+               testee_schedule.TEST_ROUND_ID
+        FROM testee_schedule
+        WHERE testee_schedule.TEST_ID = #{param.testId}
+          AND testee_schedule.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <insert id="insertSchedule">
+        INSERT INTO `testee_schedule`(`TESTEE_ID`, `TEST_ID`, `TEST_SESSION_ID`, `TEST_STAGE_ID`,
+                                      `TEST_ROUND_ID`, `START_END`, `TESTEE_LOGIN`)
+        VALUES (#{param.testeeId}, #{param.testId}, #{param.testSessionId}, '1', '1', '0', '0');
+    </insert>
+    <insert id="insertCalTmp">
+        INSERT INTO `cal_tmp_table`(`QUESTION_ID`, `TESTEE_ID`, `PARA1`, `PARA2`, `TRUE_ANSWER`, `TEST_STAGE_ID`,
+                                    `CREATE_TIME`)
+        VALUES (param.#{param.questionId}, #{param.testeeId}, #{param.para1}, #{param.para2}, #{param.trueAnswer},
+                '1',
+                NOW());
+
+    </insert>
+
+
+</mapper>

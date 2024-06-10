@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.CalculationMapper">
+    <select id="findProblem" resultType="com.example.demo.Pojo.Po.SubjectBank">
+        SELECT Nid,
+               Add1,
+               Add2,
+               SUM
+        FROM subject_300
+        WHERE Nid = #{id}
+    </select>
+    <select id="countCalTmp" resultType="int">
+        SELECT
+            count(QUESTION_ID) count
+        FROM
+            cal_tmp_table
+        where
+            TESTEE_ID = #{testee_id}
+    </select>
+    <select id="stageCountCalTmp" resultType="int">
+        SELECT
+            count(QUESTION_ID) count
+        FROM
+            cal_tmp_table
+        where
+            TESTEE_ID = #{TESTEE_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+    </select>
+    <select id="saveCalTemp" parameterType="com.example.demo.Pojo.Po.TestCalTemp">
+        INSERT INTO `jsexp`.`cal_tmp_table` (`QUESTION_ID`, `TESTEE_ID`, `PARA1`, `PARA2`, `TRUE_ANSWER`, `TEST_ANSWER`,
+                                             `FLAG`, `TEST_STAGE_ID`, `CREATE_TIME`)
+        VALUES (#{Nid}, #{testee_Id}, #{add1}, #{add2}, #{sum}, #{userSum}, #{FLAG}, #{test_Stage_Id}, #{create_Time});
+    </select>
+    <select id="answerResult" resultType="com.example.demo.Pojo.Po.TestCalTemp">
+        select
+            COUNT(if(FLAG = 1,TRUE,NULL)) rightNum,
+            COUNT(FLAG) totalNum,
+            COUNT(if(FLAG = 1,TRUE,NULL))/COUNT(FLAG) trueRate
+        from
+            cal_tmp_table
+        where
+            TESTEE_ID = #{TESTEE_ID}
+          and
+            TEST_STAGE_ID = #{TEST_STAGE_ID}
+    </select>
+    <insert id="insertIncome" parameterType="com.example.demo.Pojo.Po.Profit">
+        INSERT INTO `jsexp`.`test_income_table` (`TESTEE_ID`, `TEST_ID`, `TEST_SESSION_ID`, `TEST_STAGE_ID`,
+                                                 `TEST_ROUND_ID`, `SUM_INCOME`, `SESSION_INCOME`, `ACC_INCOME`,
+                                                 `CREATED_TIME`)
+        VALUES (#{TESTEE_ID}, #{TEST_ID}, #{TEST_SESSION_ID}, #{TEST_STAGE_ID},
+                #{TEST_ROUND_ID}, #{SUM_INCOME}, #{SESSION_INCOME}, #{ACC_INCOME},
+                #{CREATED_TIME});
+    </insert>
+    <select id="isExistIncome" parameterType="com.example.demo.Pojo.Po.Profit" resultType="string">
+        SELECT
+            TEST_ROUND_ID
+        FROM
+            `test_income_table`
+        WHERE
+            TEST_ID = #{TEST_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TESTEE_ID = #{TESTEE_ID}
+    </select>
+    <select id="rewardPoint" resultType="com.example.demo.Pojo.Po.TestCalTemp">
+        SELECT
+            CONFIG_VALUE rewardPoint
+        FROM
+            global_config
+        WHERE
+            CONFIG_NAME = '努力任务每做正确一题的奖励'
+</select>
+</mapper>

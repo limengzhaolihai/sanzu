@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <title>进入实验</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+
+        .down{
+            width: 100%;
+            height: calc(100% - 100px);
+            /*min-width: 1200px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            background-color: #ffffff;
+        }
+        .down .content_bg{
+            margin-top: -75px;
+            width: 430px;
+            height: 656px;
+            background: url(../../../static/img/start.png) no-repeat;
+        }
+        .down .text{
+            font-size: 36px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 52px;
+        }
+
+        .down .time{
+            position: absolute;
+            top: 40px;
+            right: 327px;
+            z-index: 9999;
+            /*width: 188px;*/
+            height: 52px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #EE6526;
+            line-height: 52px;
+            letter-spacing: 1px;
+        }
+        .down .confirmBtn{
+            width: 300px;
+            height: 75px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 8px 8px 8px 8px;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 1;
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border: 1px solid #4F7BFF;
+        }
+        .down  .confirmBtn p{
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <p>行为决策实验平台</p>
+        </div>
+        <div class="down">
+            <div class="content_bg"></div>
+            <div class="text">感谢您参与我们的行为决策实验！</div>
+            <div class="text">请您等候实验员的指令再点击下方按钮进入实验。</div>
+            <button class="confirmBtn" ><p>进入实验</p></button>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            //设置计时时间
+            let time = 0;
+            var countDown = setInterval(function(){
+                time++;
+            },1000)
+            $(".confirmBtn").click(function(){
+                clearInterval(countDown);
+                var stayTime = time;
+                console.log(stayTime)
+                var data = {
+                    'page_Flag':"start",
+                    'page_Flag_Explain':"实验开始欢迎页面",
+                    'module_Name':"按钮",
+                    'select_Condition':"确认",
+                    'stop_Time':stayTime
+                };
+                console.log(data)
+
+                $.ajax({
+                    url: '/JumpInExp',
+                    type: 'post',
+                    // contentType:'application/json',
+                    // data:JSON.stringify(data),
+                    data:data,
+                    async: true,
+                    success: function (res) {
+                        console.log(res);
+                        var obj = JSON.parse(res);
+                        console.log(obj)
+                        if(obj.data == '1'){
+                            window.location.href = '/JumpPage/wait'
+                        } else if(obj.data == '0'){
+                            console.log("实验未开始！")
+                        }
+                    },
+                    error: function (e) {
+                        console.log(e)
+                    }
+                })
+            })
+            history.pushState(null, null, document.URL);
+            window.addEventListener('popstate', function () {
+                history.pushState(null, null, document.URL);
+            });
+        })
+
+    </script>
+</body>
+</html>

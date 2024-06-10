@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.CountDownMapper">
+    <select id="allDown" resultType="java.lang.String">
+        SELECT
+            CONFIG_VALUE allDown
+        FROM
+            global_config
+        WHERE
+            CONFIG_NAME = '实验阶段限时'
+    </select>
+    <select id="firstDown" resultType="java.lang.String">
+    SELECT
+    CONFIG_VALUE firstDown
+    FROM
+    global_config
+    WHERE
+    CONFIG_NAME = '个人资产配置页面限时'
+</select>
+    <select id="startDown" resultType="com.example.demo.Pojo.Po.CountDown">
+    SELECT
+    CONFIG_VALUE startDown
+    FROM
+    global_config
+    WHERE
+    CONFIG_NAME = '实验开始等待时间'
+    </select>
+    <select id="finishDown" resultType="com.example.demo.Pojo.Po.CountDown">
+    SELECT
+    CONFIG_VALUE finishDown
+    FROM
+    global_config
+    WHERE
+    CONFIG_NAME = '每阶段收益等待时间'
+    </select>
+    <select id="halfDown" resultType="com.example.demo.Pojo.Po.CountDown">
+        SELECT
+            CONFIG_VALUE halfDown
+        FROM
+            global_config
+        WHERE
+            CONFIG_NAME = '实验阶段间等待时间'
+    </select>
+</mapper>

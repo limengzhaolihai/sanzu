@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/common1.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/index1.css" />
+    <script src="../../static/js/jquery-1.8.3.min.js"></script>
+  </head>
+  <body>
+    <div class="page flex-col">
+      <div class="group_1 flex-col">
+        <span class="text_1">经济学行为决策实验平台</span>
+        <span class="text_2">Behavior&nbsp;decision-making&nbsp;experimental&nbsp;platform</span
+        >
+        <input class="text-wrapper_1 flex-col" id="seat" type="text"
+               name="seat" placeholder="请输入座位号"
+               nfocus="if(placeholder=='请输入座位号'){placeholder=''}"
+               onblur="if(placeholder==''){placeholder='请输入座位号'}">
+        <div class="text-wrapper_2 flex-col">
+          <span class="text_4 start">开始实验</span>
+        </div>
+      </div>
+      <div class="group_2 flex-col"></div>
+      <div class="group_16 flex-col">
+        <div class="block_13 flex-row">
+          <div class="group_15 flex-col"></div>
+        </div>
+        <div class="text-wrapper_7 flex-row">
+          <span class="text_5">技术支持：吉数研院(吉林省)信息技术咨询设计有限责任公司&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(".start").click(function(){
+      var data = $("#seat").val();
+      console.log(data)
+      $.ajax({
+        url: '/ExpLogin',
+        type: 'post',
+        contentType:'application/json',
+        data:JSON.stringify(data),
+        async: true,
+            success: function (res) {
+              console.log(res);
+              var obj = JSON.parse(res);
+              if(obj.code == '200'){
+                window.location.href = '/JumpPage/start'
+              }else if(obj.code == '201'){
+                alert(obj.data)
+              }
+            },
+            error: function (e) {
+                    console.log(e)
+                }
+        })
+    })
+  </script>
+</html>

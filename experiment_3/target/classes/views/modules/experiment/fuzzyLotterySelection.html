@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩票选择2——模糊厌恶测度问题</title>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="../../../static/js/jquery.cxdialog.css">
+    <script src="../../../static/js/jquery.cxdialog.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        button{
+            cursor: pointer;
+        }
+        #main{
+            width: 100%;
+            /*height: 100%;*/
+            height: 1080px;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 80px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        .down .title{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .title .box{
+            width: 80%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .down .title .box p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content{
+            width: 80%;
+            /*height: calc(100% - 55px);*/
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .down .content .tips{
+            width: 100%;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .down .content .tips p{
+            width: 100%;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 35px;
+        }
+        .down .content .tips p:last-child{
+            font-size: 16px;
+            color: #EC9236;
+        }
+        .down .content .table{
+            width: 100%;
+            height: calc(100% - 199px);
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+        }
+        .down .content .table table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .down .content .table table thead{
+            height: 50px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content .table table tbody{
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content .table table span{
+            margin: 0 10px;
+        }
+        .down .content .table table th, .down .content .table table td{
+            height: 50px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+        .down .content .btn{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        .down .content .btn button{
+            width: 300px;
+            height: 75px;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+        .down .content .confirm{
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border: 1px solid #0256FF;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <p>行为决策实验平台</p>
+        </div>
+        <!-- <form action="/demo/Expconfiguration" method="post"> -->
+            <div class="down">
+                <div class="title">
+                    <div class="box">
+                        <p>第 <p class="testSessionId"></p>场</p>
+                        <p style="margin-left: 50px">实验阶段：第<p class="testStageId"></p>4阶段</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tips">
+                        <p>下面给出了10组彩票的奖励和中奖概率，请您在每组彩票中做出选择：</p>
+                        <p>（??%代表出现该结果的概率未知，但一张彩票中两个未知概率之和为100%）</p>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>选项A</th>
+                                    <th>选项B</th>
+                                    <th>您的选择</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="confirm">提交</button>
+                    </div>
+                </div>
+            </div>
+        <!-- </form> -->
+    </div>
+
+    <script>
+        $(function(){
+            $('.testSessionId').text(sessionStorage.getItem('testSessionId'))
+            // $('.testStageId').text(sessionStorage.getItem('testStageId'))
+            table(); //渲染表格
+        })
+        var allData = [];
+        function table(){
+            var data = [
+                {
+                    "id":"1",
+                    "A":"??%的概率获得27点，??%的概率获得27点",
+                    "B":"50%的概率获得22点，50%的概率获得22点",
+                    "a1":"27",
+                    "a2":"27",
+                    "b1":"22",
+                    "b2":"22"
+                },
+                {
+                    "id":"2",
+                    "A":"??%的概率获得24.6点，??%的概率获得29.4点",
+                    "B":"50%的概率获得19.6点，50%的概率获得24.4点",
+                    "a1":"24.6",
+                    "a2":"29.4",
+                    "b1":"19.6",
+                    "b2":"24.4"
+                },
+                {
+                    "id":"3",
+                    "A":"??%的概率获得22.2点，??%的概率获得31.8点",
+                    "B":"50%的概率获得17.2点，50%的概率获得26.8点",
+                    "a1":"22.2",
+                    "a2":"31.8",
+                    "b1":"17.2",
+                    "b2":"26.8"
+                },
+                {
+                    "id":"4",
+                    "A":"??%的概率获得19.8点，??%的概率获得34.2点",
+                    "B":"50%的概率获得14.8点，50%的概率获得29.2点",
+                    "a1":"19.8",
+                    "a2":"34.2",
+                    "b1":"14.8",
+                    "b2":"29.2"
+                },
+                {
+                    "id":"5",
+                    "A":"??%的概率获得17.4点，??%的概率获得36.6点",
+                    "B":"50%的概率获得12.4点，50%的概率获得31.6点",
+                    "a1":"17.4",
+                    "a2":"36.6",
+                    "b1":"12.4",
+                    "b2":"31.6"
+                },
+                {
+                    "id":"6",
+                    "A":"??%的概率获得16点，??%的概率获得39点",
+                    "B":"50%的概率获得10点，50%的概率获得34点",
+                    "a1":"16",
+                    "a2":"39",
+                    "b1":"10",
+                    "b2":"34"
+                },
+                {
+                    "id":"7",
+                    "A":"??%的概率获得12.6点，??%的概率获得41.4点",
+                    "B":"50%的概率获得7.6点，50%的概率获得36.4点",
+                    "a1":"12.6",
+                    "a2":"41.4",
+                    "b1":"7.6",
+                    "b2":"36.4"
+                },
+                {
+                    "id":"8",
+                    "A":"??%的概率获得10.2点，??%的概率获得43.8点",
+                    "B":"50%的概率获得5.2点，50%的概率获得38.8点",
+                    "a1":"10.2",
+                    "a2":"43.8",
+                    "b1":"5.2",
+                    "b2":"38.8"
+                },
+                {
+                    "id":"9",
+                    "A":"??%的概率获得7.8点，??%的概率获得46.2点",
+                    "B":"50%的概率获得2.8点，50%的概率获得41.2点",
+                    "a1":"7.8",
+                    "a2":"46.2",
+                    "b1":"2.8",
+                    "b2":"41.2"
+                },
+                {
+                    "id":"10",
+                    "A":"??%的概率获得5.4点，??%的概率获得48.6点",
+                    "B":"50%的概率获得0.4点，50%的概率获得43.6点",
+                    "a1":"5.4",
+                    "a2":"48.6",
+                    "b1":"0.4",
+                    "b2":"43.6"
+                }
+            ]
+            $('tbody').empty(); //清空表格数据
+
+            var html = "";
+            for(var i = 0; i < data.length; i++){
+                html += "<tr>"+
+                    "<td>"+ (i+1) +"</td>"+
+                    "<td>"+ data[i].A +"</td>"+
+                    "<td>"+ data[i].B +"</td>"+
+                    "<td>"+ 
+                        "<input type='radio' name='"+ data[i].id +"' data-foo=' ' data-id='"+ data[i].a1 +"' data-type='"+ data[i].a2 +"' value='A'><span>选项A</span>"+
+                        "<input type='radio' name='"+ data[i].id +"' data-foo='50' data-id='"+ data[i].b1 +"' data-type='"+ data[i].b2 +"' value='B'><span>选项B</span>"+
+                    "</td>"+
+                "</tr>";
+            }
+            $('tbody').html(html);
+        }
+        let staytime = 0;
+        var countDown = setInterval(function(){
+            staytime++;
+        },1000)
+        var allData = [];
+        var data ={};
+        var flag = 0;
+        //获取提交数据
+        $('.confirm').click(function () {
+            var actionData = {
+                'page_Flag':"fuzzyLotterySelection",
+                'page_Flag_Explain':"彩票页面2",
+                'module_Name':"按钮",
+                'select_Condition':"确认",
+                'stop_Time':staytime
+            };
+            for(var i = 0;i<10;i++){
+                var pp ={}
+                pp.PROBABILITY_1 = $("input[name='"+(i+1)+"']:checked").attr('data-foo');
+                pp.PROBABILITY_2 = $("input[name='"+(i+1)+"']:checked").attr('data-foo');
+                pp.TOPIC_ID = i+1 + "";
+                pp.OPTION = $("input[name='"+(i+1)+"']:checked").val();
+                pp.COUNT_1 = $("input[name='"+(i+1)+"']:checked").attr('data-id');
+                pp.COUNY_2 = $("input[name='"+(i+1)+"']:checked").attr('data-type');
+                allData.push(pp);
+                data.answer = allData;
+                if(pp.OPTION == undefined){
+                    flag = 1;
+                }
+            }
+            data.actionData = actionData;
+            console.log(data)
+            if(flag){
+                // alert("请完成全部选择后提交。")
+                $.cxDialog({
+                    title: '提示',
+                    info: '请完成全部选择后提交。',
+                    ok: function(){}
+                });
+                allData = [];
+                flag = 0;
+            }else {
+                //解绑按钮
+                $(this).unbind('click')
+                $.ajax({
+                    url: '/lotteryController/addtwo',
+                    type: 'post',
+                    contentType:'application/json',
+                    data:JSON.stringify(data),
+                    async: true,
+                    success: function (res) {
+                        console.log(res);
+                        $.ajax({
+                            url: '/action/SaveAction',
+                            type: 'post',
+                            data:actionData,
+                            async: true,
+                            success: function (res) {
+                                console.log(res);
+                                clearInterval(countDown);
+                                console.log('跳转');
+                                window.location.href = '/JumpPage/questionnaire'
+                            },
+                            error: function (e) {
+                                console.log(e)
+                            }
+                        })
+                    },
+                    error: function (e) {
+                        console.log(e)
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

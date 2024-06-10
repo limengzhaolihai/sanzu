@@ -1,0 +1,315 @@
+2024-05-18 15:29:59.236  INFO 21248 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication v0.0.1-SNAPSHOT using Java 1.8.0_341 on LAPTOP-DKCA2LE1 with PID 21248 (D:\Java\code\experiment\target\demo-0.0.1-SNAPSHOT.jar started by 中中 in D:\Java\code\experiment\target)
+2024-05-18 15:29:59.239  INFO 21248 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-05-18 15:29:59.925 DEBUG 21248 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Searching for mappers annotated with @Mapper
+2024-05-18 15:29:59.926 DEBUG 21248 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Using auto-configuration base package 'com.example.demo'
+2024-05-18 15:30:00.130 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CalculationMapper.class]
+2024-05-18 15:30:00.131 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CountDownMapper.class]
+2024-05-18 15:30:00.131 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/EarningsMapper.class]
+2024-05-18 15:30:00.131 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExperimentSessionMapper.class]
+2024-05-18 15:30:00.132 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExportMapper.class]
+2024-05-18 15:30:00.132 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundInfoMapper.class]
+2024-05-18 15:30:00.132 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundSumMapper.class]
+2024-05-18 15:30:00.133 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/GlobalConfigMapper.class]
+2024-05-18 15:30:00.133 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InitMapper.class]
+2024-05-18 15:30:00.133 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InvestDecisionMapper.class]
+2024-05-18 15:30:00.133 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LoginMapper.class]
+2024-05-18 15:30:00.134 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryOneMepper.class]
+2024-05-18 15:30:00.134 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryTwoMepper.class]
+2024-05-18 15:30:00.135 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ProfitMapper.class]
+2024-05-18 15:30:00.135 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/QuestMapper.class]
+2024-05-18 15:30:00.135 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SessionTesteeMapper.class]
+2024-05-18 15:30:00.135 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SubjectMapper.class]
+2024-05-18 15:30:00.136 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeActionMapper.class]
+2024-05-18 15:30:00.136 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeScheduleMapper.class]
+2024-05-18 15:30:00.136 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TestSessionMapper.class]
+2024-05-18 15:30:00.138 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'calculationMapper' and 'com.example.demo.Dao.CalculationMapper' mapperInterface
+2024-05-18 15:30:00.142 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'calculationMapper'.
+2024-05-18 15:30:00.142 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'countDownMapper' and 'com.example.demo.Dao.CountDownMapper' mapperInterface
+2024-05-18 15:30:00.143 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'countDownMapper'.
+2024-05-18 15:30:00.143 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'earningsMapper' and 'com.example.demo.Dao.EarningsMapper' mapperInterface
+2024-05-18 15:30:00.143 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'earningsMapper'.
+2024-05-18 15:30:00.143 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'experimentSessionMapper' and 'com.example.demo.Dao.ExperimentSessionMapper' mapperInterface
+2024-05-18 15:30:00.143 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'experimentSessionMapper'.
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'exportMapper' and 'com.example.demo.Dao.ExportMapper' mapperInterface
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'exportMapper'.
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundInfoMapper' and 'com.example.demo.Dao.FundInfoMapper' mapperInterface
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundInfoMapper'.
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundSumMapper' and 'com.example.demo.Dao.FundSumMapper' mapperInterface
+2024-05-18 15:30:00.144 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundSumMapper'.
+2024-05-18 15:30:00.145 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'globalConfigMapper' and 'com.example.demo.Dao.GlobalConfigMapper' mapperInterface
+2024-05-18 15:30:00.145 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'globalConfigMapper'.
+2024-05-18 15:30:00.145 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'initMapper' and 'com.example.demo.Dao.InitMapper' mapperInterface
+2024-05-18 15:30:00.145 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'initMapper'.
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'investDecisionMapper' and 'com.example.demo.Dao.InvestDecisionMapper' mapperInterface
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'investDecisionMapper'.
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'loginMapper' and 'com.example.demo.Dao.LoginMapper' mapperInterface
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'loginMapper'.
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryOneMepper' and 'com.example.demo.Dao.LotteryOneMepper' mapperInterface
+2024-05-18 15:30:00.146 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryOneMepper'.
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryTwoMepper' and 'com.example.demo.Dao.LotteryTwoMepper' mapperInterface
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryTwoMepper'.
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'profitMapper' and 'com.example.demo.Dao.ProfitMapper' mapperInterface
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'profitMapper'.
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'questMapper' and 'com.example.demo.Dao.QuestMapper' mapperInterface
+2024-05-18 15:30:00.147 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'questMapper'.
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'sessionTesteeMapper' and 'com.example.demo.Dao.SessionTesteeMapper' mapperInterface
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'sessionTesteeMapper'.
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'subjectMapper' and 'com.example.demo.Dao.SubjectMapper' mapperInterface
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'subjectMapper'.
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeActionMapper' and 'com.example.demo.Dao.TesteeActionMapper' mapperInterface
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeActionMapper'.
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeScheduleMapper' and 'com.example.demo.Dao.TesteeScheduleMapper' mapperInterface
+2024-05-18 15:30:00.148 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeScheduleMapper'.
+2024-05-18 15:30:00.149 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testSessionMapper' and 'com.example.demo.Dao.TestSessionMapper' mapperInterface
+2024-05-18 15:30:00.149 DEBUG 21248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testSessionMapper'.
+2024-05-18 15:30:01.032  INFO 21248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-18 15:30:01.061  INFO 21248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-18 15:30:01.062  INFO 21248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-05-18 15:30:01.204  INFO 21248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-18 15:30:01.214  INFO 21248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1932 ms
+2024-05-18 15:30:01.581 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CalculationMapper.xml]'
+2024-05-18 15:30:01.590 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CountDownMapper.xml]'
+2024-05-18 15:30:01.596 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/EarningsMapper.xml]'
+2024-05-18 15:30:01.611 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExperimentSessionMapper.xml]'
+2024-05-18 15:30:01.623 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExportMapper.xml]'
+2024-05-18 15:30:01.628 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundInfoMapper.xml]'
+2024-05-18 15:30:01.633 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundSumMapper.xml]'
+2024-05-18 15:30:01.638 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/GlobalConfigMapper.xml]'
+2024-05-18 15:30:01.643 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InitMapper.xml]'
+2024-05-18 15:30:01.649 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InvestDecisionMapper.xml]'
+2024-05-18 15:30:01.653 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LogionMapper.xml]'
+2024-05-18 15:30:01.658 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryOneMepper.xml]'
+2024-05-18 15:30:01.662 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryTwoMepper.xml]'
+2024-05-18 15:30:01.669 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ProfitMapper.xml]'
+2024-05-18 15:30:01.672 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/QuestMapper.xml]'
+2024-05-18 15:30:01.676 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SessionTesteeMapper.xml]'
+2024-05-18 15:30:01.679 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SubjectMapper.xml]'
+2024-05-18 15:30:01.685 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeActionMapper.xml]'
+2024-05-18 15:30:01.690 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeSchedulMapper.xml]'
+2024-05-18 15:30:01.696 DEBUG 21248 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TestSessionMapper.xml]'
+2024-05-18 15:30:01.915 DEBUG 21248 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-18 15:30:02.030 DEBUG 21248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2024-05-18 15:30:02.052 DEBUG 21248 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-05-18 15:30:02.059 DEBUG 21248 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-18 15:30:02.078 DEBUG 21248 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2024-05-18 15:30:02.149  INFO 21248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-18 15:30:02.155  INFO 21248 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 3.281 seconds (JVM running for 3.608)
+2024-05-18 15:38:16.852  INFO 35592 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication v0.0.1-SNAPSHOT using Java 1.8.0_341 on LAPTOP-DKCA2LE1 with PID 35592 (D:\Java\code\experiment\target\demo-0.0.1-SNAPSHOT.jar started by 中中 in D:\Java\code\experiment\target)
+2024-05-18 15:38:16.855  INFO 35592 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-05-18 15:38:17.335 DEBUG 35592 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Searching for mappers annotated with @Mapper
+2024-05-18 15:38:17.336 DEBUG 35592 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Using auto-configuration base package 'com.example.demo'
+2024-05-18 15:38:17.421 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CalculationMapper.class]
+2024-05-18 15:38:17.421 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CountDownMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/EarningsMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExperimentSessionMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExportMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundInfoMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundSumMapper.class]
+2024-05-18 15:38:17.422 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/GlobalConfigMapper.class]
+2024-05-18 15:38:17.423 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InitMapper.class]
+2024-05-18 15:38:17.423 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InvestDecisionMapper.class]
+2024-05-18 15:38:17.423 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LoginMapper.class]
+2024-05-18 15:38:17.423 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryOneMepper.class]
+2024-05-18 15:38:17.423 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryTwoMepper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ProfitMapper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/QuestMapper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SessionTesteeMapper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SubjectMapper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeActionMapper.class]
+2024-05-18 15:38:17.424 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeScheduleMapper.class]
+2024-05-18 15:38:17.425 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TestSessionMapper.class]
+2024-05-18 15:38:17.426 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'calculationMapper' and 'com.example.demo.Dao.CalculationMapper' mapperInterface
+2024-05-18 15:38:17.428 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'calculationMapper'.
+2024-05-18 15:38:17.428 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'countDownMapper' and 'com.example.demo.Dao.CountDownMapper' mapperInterface
+2024-05-18 15:38:17.428 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'countDownMapper'.
+2024-05-18 15:38:17.428 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'earningsMapper' and 'com.example.demo.Dao.EarningsMapper' mapperInterface
+2024-05-18 15:38:17.428 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'earningsMapper'.
+2024-05-18 15:38:17.429 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'experimentSessionMapper' and 'com.example.demo.Dao.ExperimentSessionMapper' mapperInterface
+2024-05-18 15:38:17.429 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'experimentSessionMapper'.
+2024-05-18 15:38:17.429 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'exportMapper' and 'com.example.demo.Dao.ExportMapper' mapperInterface
+2024-05-18 15:38:17.429 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'exportMapper'.
+2024-05-18 15:38:17.429 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundInfoMapper' and 'com.example.demo.Dao.FundInfoMapper' mapperInterface
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundInfoMapper'.
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundSumMapper' and 'com.example.demo.Dao.FundSumMapper' mapperInterface
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundSumMapper'.
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'globalConfigMapper' and 'com.example.demo.Dao.GlobalConfigMapper' mapperInterface
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'globalConfigMapper'.
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'initMapper' and 'com.example.demo.Dao.InitMapper' mapperInterface
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'initMapper'.
+2024-05-18 15:38:17.430 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'investDecisionMapper' and 'com.example.demo.Dao.InvestDecisionMapper' mapperInterface
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'investDecisionMapper'.
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'loginMapper' and 'com.example.demo.Dao.LoginMapper' mapperInterface
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'loginMapper'.
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryOneMepper' and 'com.example.demo.Dao.LotteryOneMepper' mapperInterface
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryOneMepper'.
+2024-05-18 15:38:17.431 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryTwoMepper' and 'com.example.demo.Dao.LotteryTwoMepper' mapperInterface
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryTwoMepper'.
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'profitMapper' and 'com.example.demo.Dao.ProfitMapper' mapperInterface
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'profitMapper'.
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'questMapper' and 'com.example.demo.Dao.QuestMapper' mapperInterface
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'questMapper'.
+2024-05-18 15:38:17.432 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'sessionTesteeMapper' and 'com.example.demo.Dao.SessionTesteeMapper' mapperInterface
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'sessionTesteeMapper'.
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'subjectMapper' and 'com.example.demo.Dao.SubjectMapper' mapperInterface
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'subjectMapper'.
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeActionMapper' and 'com.example.demo.Dao.TesteeActionMapper' mapperInterface
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeActionMapper'.
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeScheduleMapper' and 'com.example.demo.Dao.TesteeScheduleMapper' mapperInterface
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeScheduleMapper'.
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testSessionMapper' and 'com.example.demo.Dao.TestSessionMapper' mapperInterface
+2024-05-18 15:38:17.433 DEBUG 35592 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testSessionMapper'.
+2024-05-18 15:38:17.999  INFO 35592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-18 15:38:18.011  INFO 35592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-18 15:38:18.012  INFO 35592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-05-18 15:38:18.091  INFO 35592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-18 15:38:18.091  INFO 35592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1188 ms
+2024-05-18 15:38:18.418 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CalculationMapper.xml]'
+2024-05-18 15:38:18.426 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CountDownMapper.xml]'
+2024-05-18 15:38:18.432 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/EarningsMapper.xml]'
+2024-05-18 15:38:18.452 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExperimentSessionMapper.xml]'
+2024-05-18 15:38:18.465 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExportMapper.xml]'
+2024-05-18 15:38:18.473 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundInfoMapper.xml]'
+2024-05-18 15:38:18.478 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundSumMapper.xml]'
+2024-05-18 15:38:18.483 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/GlobalConfigMapper.xml]'
+2024-05-18 15:38:18.488 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InitMapper.xml]'
+2024-05-18 15:38:18.495 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InvestDecisionMapper.xml]'
+2024-05-18 15:38:18.501 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LogionMapper.xml]'
+2024-05-18 15:38:18.505 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryOneMepper.xml]'
+2024-05-18 15:38:18.509 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryTwoMepper.xml]'
+2024-05-18 15:38:18.515 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ProfitMapper.xml]'
+2024-05-18 15:38:18.518 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/QuestMapper.xml]'
+2024-05-18 15:38:18.521 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SessionTesteeMapper.xml]'
+2024-05-18 15:38:18.524 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SubjectMapper.xml]'
+2024-05-18 15:38:18.528 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeActionMapper.xml]'
+2024-05-18 15:38:18.533 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeSchedulMapper.xml]'
+2024-05-18 15:38:18.540 DEBUG 35592 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TestSessionMapper.xml]'
+2024-05-18 15:38:18.753 DEBUG 35592 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-18 15:38:18.848 DEBUG 35592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2024-05-18 15:38:18.866 DEBUG 35592 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-05-18 15:38:18.873 DEBUG 35592 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-18 15:38:18.892 DEBUG 35592 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2024-05-18 15:38:18.959  INFO 35592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-18 15:38:18.966  INFO 35592 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.466 seconds (JVM running for 2.788)
+2024-05-19 10:54:34.845  INFO 21328 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication v0.0.1-SNAPSHOT using Java 1.8.0_341 on LAPTOP-DKCA2LE1 with PID 21328 (D:\Java\code\experiment\target\demo-0.0.1-SNAPSHOT.jar started by 中中 in D:\Java\code\experiment\target)
+2024-05-19 10:54:34.848  INFO 21328 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-05-19 10:54:35.285 DEBUG 21328 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Searching for mappers annotated with @Mapper
+2024-05-19 10:54:35.285 DEBUG 21328 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Using auto-configuration base package 'com.example.demo'
+2024-05-19 10:54:35.374 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CalculationMapper.class]
+2024-05-19 10:54:35.375 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/CountDownMapper.class]
+2024-05-19 10:54:35.375 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/EarningsMapper.class]
+2024-05-19 10:54:35.375 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExperimentSessionMapper.class]
+2024-05-19 10:54:35.376 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ExportMapper.class]
+2024-05-19 10:54:35.376 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundInfoMapper.class]
+2024-05-19 10:54:35.376 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/FundSumMapper.class]
+2024-05-19 10:54:35.377 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/GlobalConfigMapper.class]
+2024-05-19 10:54:35.377 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InitMapper.class]
+2024-05-19 10:54:35.377 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/InvestDecisionMapper.class]
+2024-05-19 10:54:35.377 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LoginMapper.class]
+2024-05-19 10:54:35.378 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryOneMepper.class]
+2024-05-19 10:54:35.379 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/LotteryTwoMepper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/ProfitMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/QuestMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SessionTesteeMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/SubjectMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeActionMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TesteeScheduleMapper.class]
+2024-05-19 10:54:35.380 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: URL [jar:file:/D:/Java/code/experiment/target/demo-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/example/demo/Dao/TestSessionMapper.class]
+2024-05-19 10:54:35.382 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'calculationMapper' and 'com.example.demo.Dao.CalculationMapper' mapperInterface
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'calculationMapper'.
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'countDownMapper' and 'com.example.demo.Dao.CountDownMapper' mapperInterface
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'countDownMapper'.
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'earningsMapper' and 'com.example.demo.Dao.EarningsMapper' mapperInterface
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'earningsMapper'.
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'experimentSessionMapper' and 'com.example.demo.Dao.ExperimentSessionMapper' mapperInterface
+2024-05-19 10:54:35.384 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'experimentSessionMapper'.
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'exportMapper' and 'com.example.demo.Dao.ExportMapper' mapperInterface
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'exportMapper'.
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundInfoMapper' and 'com.example.demo.Dao.FundInfoMapper' mapperInterface
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundInfoMapper'.
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundSumMapper' and 'com.example.demo.Dao.FundSumMapper' mapperInterface
+2024-05-19 10:54:35.385 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundSumMapper'.
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'globalConfigMapper' and 'com.example.demo.Dao.GlobalConfigMapper' mapperInterface
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'globalConfigMapper'.
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'initMapper' and 'com.example.demo.Dao.InitMapper' mapperInterface
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'initMapper'.
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'investDecisionMapper' and 'com.example.demo.Dao.InvestDecisionMapper' mapperInterface
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'investDecisionMapper'.
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'loginMapper' and 'com.example.demo.Dao.LoginMapper' mapperInterface
+2024-05-19 10:54:35.386 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'loginMapper'.
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryOneMepper' and 'com.example.demo.Dao.LotteryOneMepper' mapperInterface
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryOneMepper'.
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryTwoMepper' and 'com.example.demo.Dao.LotteryTwoMepper' mapperInterface
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryTwoMepper'.
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'profitMapper' and 'com.example.demo.Dao.ProfitMapper' mapperInterface
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'profitMapper'.
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'questMapper' and 'com.example.demo.Dao.QuestMapper' mapperInterface
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'questMapper'.
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'sessionTesteeMapper' and 'com.example.demo.Dao.SessionTesteeMapper' mapperInterface
+2024-05-19 10:54:35.387 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'sessionTesteeMapper'.
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'subjectMapper' and 'com.example.demo.Dao.SubjectMapper' mapperInterface
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'subjectMapper'.
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeActionMapper' and 'com.example.demo.Dao.TesteeActionMapper' mapperInterface
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeActionMapper'.
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeScheduleMapper' and 'com.example.demo.Dao.TesteeScheduleMapper' mapperInterface
+2024-05-19 10:54:35.388 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeScheduleMapper'.
+2024-05-19 10:54:35.389 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testSessionMapper' and 'com.example.demo.Dao.TestSessionMapper' mapperInterface
+2024-05-19 10:54:35.389 DEBUG 21328 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testSessionMapper'.
+2024-05-19 10:54:35.864  INFO 21328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-19 10:54:35.872  INFO 21328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-19 10:54:35.873  INFO 21328 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-05-19 10:54:35.954  INFO 21328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-19 10:54:35.954  INFO 21328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1059 ms
+2024-05-19 10:54:36.202 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CalculationMapper.xml]'
+2024-05-19 10:54:36.209 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/CountDownMapper.xml]'
+2024-05-19 10:54:36.213 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/EarningsMapper.xml]'
+2024-05-19 10:54:36.224 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExperimentSessionMapper.xml]'
+2024-05-19 10:54:36.237 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ExportMapper.xml]'
+2024-05-19 10:54:36.242 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundInfoMapper.xml]'
+2024-05-19 10:54:36.250 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/FundSumMapper.xml]'
+2024-05-19 10:54:36.256 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/GlobalConfigMapper.xml]'
+2024-05-19 10:54:36.260 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InitMapper.xml]'
+2024-05-19 10:54:36.264 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/InvestDecisionMapper.xml]'
+2024-05-19 10:54:36.271 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LogionMapper.xml]'
+2024-05-19 10:54:36.275 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryOneMepper.xml]'
+2024-05-19 10:54:36.278 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/LotteryTwoMepper.xml]'
+2024-05-19 10:54:36.289 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/ProfitMapper.xml]'
+2024-05-19 10:54:36.292 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/QuestMapper.xml]'
+2024-05-19 10:54:36.295 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SessionTesteeMapper.xml]'
+2024-05-19 10:54:36.297 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/SubjectMapper.xml]'
+2024-05-19 10:54:36.302 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeActionMapper.xml]'
+2024-05-19 10:54:36.307 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TesteeSchedulMapper.xml]'
+2024-05-19 10:54:36.313 DEBUG 21328 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'class path resource [mybatis/TestSessionMapper.xml]'
+2024-05-19 10:54:36.517 DEBUG 21328 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-19 10:54:36.602 DEBUG 21328 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2024-05-19 10:54:36.619 DEBUG 21328 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-05-19 10:54:36.625 DEBUG 21328 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-19 10:54:36.639 DEBUG 21328 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2024-05-19 10:54:36.713  INFO 21328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-19 10:54:36.720  INFO 21328 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.201 seconds (JVM running for 2.512)
+2024-05-19 10:55:04.587  INFO 21328 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-19 10:55:04.588  INFO 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-19 10:55:04.589 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-05-19 10:55:04.589 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-05-19 10:55:04.590 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-05-19 10:55:04.591 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5ba9990f
+2024-05-19 10:55:04.592 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@27f4bd69
+2024-05-19 10:55:04.592 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-05-19 10:55:04.593  INFO 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-19 10:55:04.610 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/index", parameters={}
+2024-05-19 10:55:04.619 DEBUG 21328 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Login.LoginController#Exptologin()
+2024-05-19 10:55:04.644 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-05-19 10:55:04.645 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/experiment/main.html', model {}
+2024-05-19 10:55:04.646 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/experiment/main.html]
+2024-05-19 10:55:04.652 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/experiment/main.html", parameters={}
+2024-05-19 10:55:04.658 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-05-19 10:55:04.675 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-05-19 10:55:04.677 DEBUG 21328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-19 10:55:04.732 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/stamain.htmltic/js/layer/layer.js", parameters={}
+2024-05-19 10:55:04.734 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-05-19 10:55:04.736 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-19 10:55:04.736 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-19 10:55:04.737 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-19 10:55:04.739 DEBUG 21328 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-05-19 10:55:04.763 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-05-19 10:55:04.764 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun May 19 10:55:04 CST 2024, status=404, error=Not Found, path=/stamain.htmltic/js/layer (truncated)...]
+2024-05-19 10:55:04.821 DEBUG 21328 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404

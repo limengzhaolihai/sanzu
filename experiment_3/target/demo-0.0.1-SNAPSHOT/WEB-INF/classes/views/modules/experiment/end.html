@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验报酬</title>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        button{
+            cursor: pointer;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 80px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        .down .title{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .title .box{
+            width: 80%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .down .title .box p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content{
+            width: 80%;
+            height: calc(100% - 120px);
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .down .content .tips{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .down .content .tips p{
+            width: 100%;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 35px;
+        }
+        .down .content .table{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+        }
+        .down .content .table table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .down .content .table table thead{
+            height: 50px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content .table table tbody{
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content .table table span{
+            margin: 0 10px;
+        }
+        .down .content .table table th, .down .content .table table td{
+            height: 50px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+        .line{
+            width: 1920px;
+            height: 0px;
+            opacity: 1;
+            border: 1px solid #D8D8D8;
+        }
+        .footText{
+            line-height: 60px;
+            margin: auto;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            color: #666666;
+            width: 617px;
+        }
+        .settlement{
+            font-size: 36px;
+            line-height: 150px;
+            text-align: center;
+            color: #333333;
+        }
+        .settlement span{
+            color: rgba(246.0000005364418, 61.00000016391277, 34.00000177323818, 1);
+        }
+        .prompt{
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+            line-height: 80px;
+        }
+        .pic{
+            width: 540px;
+            height: 540px;
+            background: url(../../../static/img/money.png) no-repeat;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <p>行为决策实验平台</p>
+        </div>
+        <!-- <form action="/demo/Expconfiguration" method="post"> -->
+            <div class="down">
+                <div class="title">
+                    <div class="box">
+                        <p>第 <p class="testSessionId"></p>场</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tips">
+                        <p>实验报酬结算：</p>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>实验阶段</th>
+                                    <th>第一部分</th>
+                                    <th>第二部分</th>
+                                    <th>总计</th>
+                                    <th>折合现金</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="body">
+                        <div class="settlement">您在本场实验中获得的全部实验报酬为：  <span class="money"></span> <span>元</span></div>
+                        <div class="prompt">再次感谢您对我们实验的支持！  </div>
+                        <div class="prompt">请您不要关闭本页面，在原位稍坐等待，实验员将依次为您发放报酬。</div>
+                        <div class="prompt">谢谢您的参与！</div>
+                        <div class="pic"></div>
+                    </div>
+                </div>
+                <div class="foot">
+                    <div class="line"></div>
+                    <div class="footText">技术研发：吉数研院(吉林省)信息技术咨询设计有限责任公司 电话：0431-80768896</div>
+                </div>
+            </div>
+        <!-- </form> -->
+    </div>
+
+    <script>
+        var data = [
+            {
+                "id":"001",
+                "A":"试验报酬",
+                "B":"1034点",
+                "C":"1034点",
+                "D":"1034点",
+                "E":"52.45元"
+            },
+            {
+                "id":"002",
+                "A":"出场费",
+                "B":"————",
+                "C":"————",
+                "D":"————",
+                "E":"10元"
+            }
+        ]
+        $(function(){
+            $('.testSessionId').text(sessionStorage.getItem('testSessionId'))
+            $.ajax({
+                type: "post",
+                url: '/profitController/finalProfit',
+                success: function(res) {
+                    console.log(res)
+                    data[0].B = res.stageIncomeOne;
+                    data[0].C = res.stageIncomeTwo;
+                    data[0].D = res.totalStageIncome;
+                    data[0].E = res.cashEquivalent;
+                    data[1].E = res.exitCost;
+                    $('.money').text(res.totalEquipIncome);
+                    table(); //渲染表格
+                }
+            });
+        })
+
+        function table(){
+
+            $('tbody').empty(); //清空表格数据
+
+            var html = "";
+            for(var i = 0; i < data.length; i++){
+                html += "<tr>"+
+                    "<td>"+ data[i].A +"</td>"+
+                    "<td>"+ data[i].B +"</td>"+
+                    "<td>"+ data[i].C +"</td>"+
+                    "<td>"+ data[i].D +"</td>"+
+                    "<td>"+ data[i].E +"</td>"+
+                "</tr>";
+            }
+            $('tbody').html(html);
+        }
+
+        // 倒计时
+        var min = 15; // 分
+        var sec = 0; // 秒
+        var t;
+        // start();
+        function start() {
+            clock();
+            if (sec == 0) {
+                min--;
+                sec = 60;
+            }
+            sec--;
+            // 时间为零跳转交卷页面
+            if (min == 0 && sec == 0) {
+                console.log("时间归零")
+            }
+            //设置计时器，1000毫秒(即1秒)调用函数
+            con = t = setTimeout("start()", 1000);
+
+            //usetime开始
+            var myDate = new Date;
+            var examtime = myDate.getFullYear()+'-'+(myDate.getMonth() + 1)+'-'+myDate.getDate()+' '+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds();
+            var startS = myDate.getSeconds();
+            var startM = myDate.getMinutes();
+        }
+
+        //输出样式判断
+        function clock() {
+            if (min < 10 && sec < 10)
+                document.getElementById("time").innerHTML = "0" + min + " : " + "0" + sec;
+            else if (min < 10)
+                document.getElementById("time").innerHTML = "0" + min + " : " + sec;
+            else if (sec < 10)
+                document.getElementById("time").innerHTML = min + " : " + "0" + sec;
+            else
+                document.getElementById("time").innerHTML = min + " : " + sec;
+        }
+
+
+        //获取当前页面用时
+        $('.confirmBtn').click(function () {
+            var endTime = $("#time").text();
+            var min = endTime.substring(0,2); // 分
+            var sec = endTime.substring(5,7); // 秒
+            var roundTime = 900 - min*60 - sec;
+            $('.runOut').val(roundTime)
+            sessionStorage.setItem('min',min)
+            sessionStorage.setItem('sec',sec)
+            window.location.href = '/JumpPage/head'
+        })
+    </script>
+</body>
+</html>

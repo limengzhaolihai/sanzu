@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <script src="../../static/js/jquery-1.8.3.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            min-width: 780px;
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .leftBox{
+            width: 53%;
+            height: 100%;
+            background-color: rgba(234, 239, 249, 1);
+            display: flex;
+            align-items: center;
+        }
+        .leftBox .leftImageBox{
+            width: 100%;
+            height: 70%;
+        }
+        .leftBox .leftImageBox img{
+            width: 100%;
+            height: 100%;
+        }
+        .rightBox{
+            width: 47%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+        .contentBox{
+            width: 57%;
+            height: 70%;
+            padding-top: 15%;
+            display: flex;
+            justify-content: center;
+            /* align-items: flex-start; */
+            align-content: space-between;
+            flex-wrap: wrap;
+        }
+        .topBox{
+            width: 100%;
+            height:60%;
+            padding: 20% 0;
+            background-image: url(../../../static/img/icon3.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .bottomBox{
+            width: 90%;
+            height:15%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .itemLeft{
+            width: 35%;
+            height: 40%;
+        }
+        .itemLeft img{
+            width: 100%;
+            height: 100%;
+        }
+        .itemRight{
+            display: flex;
+            width: 50%;
+            justify-content: flex-end;
+            align-items:center;
+        }
+        .p3{
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #666666;
+        }
+        .line{
+            width: 90%;
+            height: 25%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+           justify-content: center;
+        }
+        .line1{
+            height: auto;
+            text-align: center;
+            background-image: -webkit-linear-gradient(right,#0256FF,#4F7BFF );
+            background-size: 100% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .p1{
+            font-size: 36px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            letter-spacing: 3px;
+            width: 100%;
+        }
+        .p2{
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            width: 100%;
+        }
+        .line2{
+            height: 15%;
+        }
+        .line2 input{
+            width: 70%;
+            padding: 0 5%;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #DDDDDD;
+            font-size: 24px;
+        }
+        input {
+            outline: none;
+        }
+        .line3{
+            height: 15%;
+            width: 70%;
+            background: linear-gradient(90deg, #4F7BFF 0%, #0256FF 100%);
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        @media screen and (max-width: 1800px){
+            .p1{
+                font-size: 30px;  
+            }
+            .p2{
+                font-size: 13px;
+            }
+            .p3{
+                font-size: 13px;
+            }
+        }
+
+        @media screen and (max-width: 1530px){
+            .p1{
+                font-size: 26px;
+            }
+        }
+        @media screen and (max-width: 1433px){
+            .p2{
+                font-size: 13px;
+            }
+            .p3{
+                font-size: 13px;
+            }
+        }
+        @media screen and (max-width: 1376px){
+            .p1{
+                font-size: 20px;
+            }
+           .p2{
+               font-size: 12px;
+           }
+           .p3{
+               font-size: 12px;
+           }
+           .p4{
+               font-size: 12px;
+           }
+       }
+       @media screen and (max-width: 1255px){
+            .p1{
+                font-size: 16px;
+            }
+           
+       }
+       @media screen and (max-width: 870px){
+            .p1{
+                font-size: 14px;
+            }
+           
+       }
+        .start{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="leftBox">
+            <div class="leftImageBox">
+<!--                <img src="../../../static/img/icon1.png">-->
+                <img src="../../static/img/icon1.png">
+            </div>
+        </div>
+        <div class="rightBox">
+            <div class="contentBox">
+                <div class="topBox">
+                    <div class="line line1">
+                        <p class="p1">经济学行为决策实验平台</p>
+                        <p class="p2">Behavior decision-making experimental platform</p>
+                    </div>
+                    <div class="line line2">
+                        <input placeholder="请输入座位号" id="seat"/>
+                    </div>
+                    <div class="line line3 start">
+                        <div class="p4">开始实验</div>
+                    </div>
+                </div>
+                <div class="bottomBox">
+<!--                    <div class="itemLeft"><img src="../../../static/img/icon2.png"></div>-->
+<!--                    <div class="itemLeft" style="margin-top: 20px;"><p class="p3" style="word-break: break-all;color:  #97694F;font-size: 27px;">少喝咖啡队</p></div>-->
+                    <div class="itemRight"><p class="p3" style="word-break: break-all;">服务电话：0431-81423456</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(".start").click(function(){
+        // console.log(111)
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        }
+        //FireFox
+        else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+        }
+        //Chrome等
+        else if (document.documentElement.webkitRequestFullScreen) {
+            document.documentElement.webkitRequestFullScreen();
+        }
+        //IE11
+        else if (document.documentElement.msRequestFullscreen) {
+            document.body.msRequestFullscreen();
+        }
+
+        var data = $("#seat").val();
+        console.log(data)
+        // //解绑按钮
+        // $(this).unbind('click')
+        $.ajax({
+            url: '/ExpLogin',
+            type: 'post',
+            contentType:'application/json',
+            data:JSON.stringify(data),
+            async: true,
+            success: function (res) {
+                console.log(res);
+                var obj = JSON.parse(res);
+                if(obj.code == '200'){
+                    window.location.href = '/JumpPage/start'
+                }else if(obj.code == '201'){
+                    alert(obj.data)
+                }
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        })
+    })
+</script>
+</html>

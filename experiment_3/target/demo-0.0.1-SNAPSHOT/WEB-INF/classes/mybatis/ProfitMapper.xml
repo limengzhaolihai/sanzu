@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.ProfitMapper">
+    <select id="findRound" resultType="com.example.demo.Pojo.Po.Profit">
+        select TESTEE_ID,
+               TEST_ID,
+               TEST_SESSION_ID,
+               TEST_STAGE_ID,
+               TEST_ROUND_ID,
+               START_END
+        from testee_schedule
+        where TESTEE_ID = #{TESTEE_ID}
+    </select>
+    <select id="findRatio" resultType="com.example.demo.Pojo.Po.Profit">
+        select TESTEE_ID,
+               TEST_STAGE_ID,
+               TEST_ROUND_ID,
+               FUND_RATIO,
+               FUND_ID
+        from invest_decision_table
+        where TESTEE_ID = #{TESTEE_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID}
+    </select>
+    <select id="findFundGroup" resultType="com.example.demo.Pojo.Po.Profit">
+        SELECT DISTINCT
+            FUND_GROUP
+        FROM
+            test_session_table
+        where TEST_ID = #{TEST_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID}
+    </select>
+    <select id="findFund" resultType="com.example.demo.Pojo.Po.Profit">
+        select FUND_ID,
+               PRICE
+        from fund_info_table
+        where TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and FUND_GROUP = #{FUND_GROUP}
+          and FUND_NUM = #{TEST_ROUND_ID}
+    </select>
+    <select id="findLastIncome" resultType="com.example.demo.Pojo.Po.Profit">
+        select SUM_INCOME lastIncome
+        from test_income_table
+        where TESTEE_ID = #{TESTEE_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID} - '1'
+    </select>
+    <insert id="insertIncome" parameterType="com.example.demo.Pojo.Po.Profit">
+        INSERT INTO `jsexp`.`test_income_table` (`TESTEE_ID`, `TEST_ID`, `TEST_SESSION_ID`, `TEST_STAGE_ID`,
+                                                 `TEST_ROUND_ID`, `SUM_INCOME`, `SESSION_INCOME`, `ACC_INCOME`,
+                                                 FUND_ONE_INCOME, FUND_TWO_INCOME, FUND_THR_INCOME, UNALLOCAT_INCOME,
+                                                 `CREATED_TIME`)
+        VALUES (#{TESTEE_ID}, #{TEST_ID}, #{TEST_SESSION_ID}, #{TEST_STAGE_ID},
+                #{TEST_ROUND_ID}, #{SUM_INCOME}, #{SESSION_INCOME}, #{ACC_INCOME},
+                #{FUND_ONE_INCOME}, #{FUND_TWO_INCOME}, #{FUND_THR_INCOME}, #{UNALLOCAT_INCOME},
+                #{CREATED_TIME});
+    </insert>
+    <select id="isExistIncome" parameterType="com.example.demo.Pojo.Po.Profit" resultType="string">
+        SELECT TEST_ROUND_ID
+        FROM `test_income_table`
+        WHERE TEST_ID = #{TEST_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TESTEE_ID = #{TESTEE_ID}
+    </select>
+    <select id="findLottery" parameterType="com.example.demo.Pojo.Po.Profit"
+            resultType="com.example.demo.Pojo.Po.LotteryOne">
+        select PROBABILITY_1,
+               COUNT_1,
+               PROBABILITY_2,
+               COUNY_2
+        from lottery_table
+        where TESTEE_ID = #{TESTEE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID}
+    </select>
+    <insert id="saveStageIncome" parameterType="com.example.demo.Pojo.Po.Profit">
+        INSERT INTO `jsexp`.`stage_income_table` (`TESTEE_ID`, `TEST_ID`, `TEST_SESSION_ID`, `TEST_STAGE_ID`,
+                                                  `STAGE_INCOME`, `CREATED_TIME`)
+        VALUES (#{TESTEE_ID}, #{TEST_ID}, #{TEST_SESSION_ID}, #{TEST_STAGE_ID},
+                #{STAGE_INCOME}, #{CREATED_TIME});
+    </insert>
+    <select id="findStageIncome" parameterType="com.example.demo.Pojo.Po.Profit"
+            resultType="com.example.demo.Pojo.Po.Profit">
+        SELECT STAGE_INCOME
+        FROM `stage_income_table`
+        WHERE TESTEE_ID = #{TESTEE_ID}
+          and TEST_ID = #{TEST_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+    </select>
+    <select id="findGlobal" resultType="com.example.demo.Pojo.Po.Profit">
+        SELECT CONFIG_NAME,
+               CONFIG_VALUE
+        FROM `global_config`
+    </select>
+    <select id="viewRoundProfit" resultType="com.example.demo.Pojo.Po.Profit"
+            parameterType="com.example.demo.Pojo.Po.Profit">
+        SELECT SUM_INCOME,
+               SESSION_INCOME,
+               ACC_INCOME
+        FROM test_income_table
+        where TESTEE_ID = #{TESTEE_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID}
+    </select>
+    <select id="presetScale" resultType="com.example.demo.Pojo.Po.Profit"
+            parameterType="com.example.demo.Pojo.Po.Profit">
+        SELECT SUM_INCOME,
+               FUND_ONE_INCOME,
+               FUND_TWO_INCOME,
+               FUND_THR_INCOME,
+               UNALLOCAT_INCOME
+        FROM test_income_table
+        where TESTEE_ID = #{TESTEE_ID}
+          and TEST_SESSION_ID = #{TEST_SESSION_ID}
+          and TEST_STAGE_ID = #{TEST_STAGE_ID}
+          and TEST_ROUND_ID = #{TEST_ROUND_ID} - '1'
+    </select>
+</mapper>

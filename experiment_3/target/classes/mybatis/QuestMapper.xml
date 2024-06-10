@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.QuestMapper">
+
+    <insert id="addQuest" parameterType="Quest">
+        INSERT INTO quest_table(TESTEE_ID,TEST_ID,TEST_SESSION_ID,TEST_STAGE_ID,TEST_ROUND_ID,TOPIC_ID,`OPTION`,CREATED_TIME)
+        VALUES
+<!--        <foreach item="item" index="index" collection="list" separator=",">-->
+               (#{testee_Id},#{test_Id},#{test_Session_Id},#{test_Stage_Id},#{test_Round_Id},#{topic_Id},#{options},Now());
+<!--        </foreach>-->
+
+    </insert>
+
+
+</mapper>

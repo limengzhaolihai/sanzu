@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.FundSumMapper">
+    <insert id="insertFundSum">
+        INSERT INTO `fund_sum_table`(`FUND_DATA_TYPE`, `FUND_GROUP`, `FUND_ID`, `TEST_PART`, `EXPLAIN1`)
+        VALUES (#{param.fundDataType}, #{param.fundGroup}, #{param.fundId}, #{param.testPart}, #{param.explain1});
+    </insert>
+    <update id="updateFundSumByPkeys">
+        UPDATE `fund_sum_table`
+        SET `TEST_PART` = #{param.testPart},
+            `EXPLAIN1`  = #{param.explain1}
+        WHERE `FUND_DATA_TYPE` = #{param.fundDataType}
+          AND `FUND_GROUP` = #{param.fundGroup}
+          AND `FUND_ID` = #{param.fundId}
+    </update>
+    <delete id="deleteFundSumByPkeys">
+        DELETE
+        FROM `fund_sum_table`
+        WHERE `FUND_DATA_TYPE` = #{param.fundDataType}
+          AND `FUND_GROUP` = #{param.fundGroup}
+          AND `FUND_ID` = #{param.fundId}
+    </delete>
+
+
+    <select id="listFundSum" resultType="java.util.Map">
+        SELECT fund_sum_table.FUND_ID,
+               fund_sum_table.TEST_PART,
+               fund_sum_table.FUND_DATA_TYPE,
+               fund_sum_table.FUND_GROUP
+        FROM fund_sum_table
+ORDER BY FUND_ID,FUND_GROUP
+    </select>
+    <select id="selectFundSumByPkeys" resultType="java.util.Map">
+        SELECT fsum.FUND_ID,
+               fsum.FUND_DATA_TYPE,
+               fsum.FUND_GROUP,
+               fsum.TEST_PART,
+               fsum.EXPLAIN1
+        FROM fund_sum_table AS fsum
+        WHERE fsum.FUND_DATA_TYPE = #{param.fundDataType}
+          AND fsum.FUND_GROUP = #{param.fundGroup}
+          AND fsum.FUND_ID = #{param.fundId}
+    </select>
+</mapper>

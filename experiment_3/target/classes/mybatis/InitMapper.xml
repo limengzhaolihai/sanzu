@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.InitMapper">
+
+    <update id="initExp">
+        TRUNCATE TABLE `fund_info_table`;
+        TRUNCATE TABLE `fund_sum_table`;
+        TRUNCATE TABLE `action_table`;
+        TRUNCATE TABLE `cal_tmp_table`;
+        TRUNCATE TABLE `invest_decision_table`;
+        TRUNCATE TABLE `lottery_table`;
+        TRUNCATE TABLE `quest_table`;
+        TRUNCATE TABLE `session_testee_table`;
+        TRUNCATE TABLE `stage_income_table`;
+        TRUNCATE TABLE `test_income_table`;
+        TRUNCATE TABLE `test_session_table`;
+        TRUNCATE TABLE `testee_schedule`;
+    </update>
+</mapper>

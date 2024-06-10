@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>经济学行为决策实验平台管理端</title>
+    <link rel="stylesheet" href="../../../static/js/layer/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../../static/css/common2.css" />
+    <style>
+        body {
+            background: #F8F8F8;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .content .head {
+            width: 100%;
+            height: 80px;
+            min-width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 10px;
+        }
+        
+        .content .head button {
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #4877FF;
+            border-radius: 16px 16px 16px 16px;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 23px;
+            letter-spacing: 1px;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        
+        #init {
+            width: 150px;
+            right: 130px;
+        }
+        
+        .content .body {
+            width: 100%;
+            height: calc(100% - 80px);
+            display: flex;
+        }
+        
+        .content .body .body-left {
+            width: 220px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #fff;
+        }
+        
+        .content .body .body-left .logo {
+            width: 100%;
+            height: 130px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 20px;
+        }
+        
+        .content .body .body-left .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+        }
+        
+        .content .body .body-left .list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            letter-spacing: 3px;
+        }
+        
+        .content .body .body-left .list .menu {
+            width: 220px;
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .content .body .body-left .list .sec-menu {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #666666;
+            line-height: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .content .body .body-left .list .menu .item {
+            width: 200px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .content .body .body-left .list .menu .first-active {
+            width: 200px;
+            height: 45px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #4877FF;
+            border-radius: 16px 16px 16px 16px;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .body .body-left .list .menu .sec-active {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #0256FF;
+        }
+        
+        .content .body .body-right {
+            width: calc(100% - 236px);
+            height: calc(100% - 96px);
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .layui-layer-btn {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .layui-layer-btn a {
+            width: 150px !important;
+            height: 50px !important;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        
+        .layui-layer-btn0 {
+            background: linear-gradient(90deg, #dc2929 0%, #ff0202 100%) !important;
+            box-shadow: 0px 4px 10px 0px #dc2929 !important;
+            border: 1px solid #dc2929 !important;
+            color: #FFFFFF !important;
+        }
+        
+        .layui-layer-btn1 {
+            background: linear-gradient(90deg, #dc2929 0%, #ff0202 100%) !important;
+            box-shadow: 0px 4px 10px 0px #dc2929 !important;
+            border: 1px solid #dc2929 !important;
+            color: #FFFFFF !important;
+        }
+        
+        .layui-layer-btn a:last-child {
+            background: #eee !important;
+            box-shadow: 0px 4px 10px 0px #eee !important;
+            border: 1px solid #ccc !important;
+            color: #333 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="head">
+            <p>行为决策实验平台</p>
+            <button id="init">初始化实验平台</button>
+            <button id="exit">退出登录</button>
+        </div>
+        <div class="body">
+            <div class="body-left">
+                <div class="logo">
+                    <img src="../../../static/img/login.png" alt="" />
+                    <span>管理员，您好！</span>
+                </div>
+                <div class="list">
+                    <!-- 基金设置__一级标题 -->
+                    <div class="menu first-menu">
+                        <div class="item first-active">
+                            <p>基金设置</p>
+                        </div>
+                    </div>
+                    <!-- 基金设置__二级标题 -->
+                    <div class="menu sec-menu show">
+                        <div class="item sec-active" data-url="/MgtJumpPage/fundInfo">
+                            <p>基金情况</p>
+                        </div>
+                    </div>
+                    <div class="menu sec-menu show">
+                        <div class="item" data-url="/MgtJumpPage/fundData">
+                            <p>基金数据</p>
+                        </div>
+                    </div>
+                    <!-- 实验设置__一级标题 -->
+                    <div class="menu first-menu">
+                        <div class="item">
+                            <p>实验设置</p>
+                        </div>
+                    </div>
+                    <!-- 实验设置__二级标题 -->
+                    <div class="menu sec-menu hide">
+                        <div class="item" data-url="/MgtJumpPage/parameterSetting">
+                            <p>全局设置</p>
+                        </div>
+                    </div>
+                    <div class="menu sec-menu hide">
+                        <div class="item" data-url="/MgtJumpPage/experimentInfo">
+                            <p>实验场次</p>
+                        </div>
+                    </div>
+                    <!-- 实验数据__一级标题 -->
+                    <div class="menu first-menu">
+                        <div class="item" data-url="/MgtJumpPage/experimentData">
+                            <p>实验数据</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right">
+                <!-- 内容主体区域 -->
+                <iframe src="/MgtJumpPage/fundInfo" frameborder="0" id="demoAdmin" style="width: 100%; height: 100%; border-radius: 2px;"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../static/js/layer/layer.js"></script>
+
+    <script>
+        $('.hide').hide();
+        //左侧菜单方法
+        $('.list .first-menu .item').click(function() {
+            let index = $(this).parent().index();
+            console.log(index)
+            $('.list .menu .item').removeClass('first-active');
+            if (index == 0) {
+                $('.show').slideDown(300);
+                $('.hide').slideUp(300);
+            } else if (index == 3) {
+                $('.hide').slideDown(300);
+                $('.show').slideUp(300);
+            } else {
+                $('.list .sec-menu .item').removeClass('sec-active');
+                $('.list .sec-menu').slideUp(300);
+                let url = $(this).attr('data-url');
+                jump(url);
+            }
+            $(this).addClass('first-active');
+        })
+        $('.list .sec-menu .item').click(function() {
+            let url = $(this).attr('data-url');
+            let index = $(this).parent().index();
+            $('.list .sec-menu .item').removeClass('sec-active');
+            $(this).addClass('sec-active');
+            jump(url);
+        })
+
+        $('#init').off().on('click', function() {
+            layer.open({
+                type: 2,
+                title: false,
+                skin: close,
+                area: ['500px', '300px'],
+                btn: ['保存', '关闭'],
+                content: '/MgtJumpPage/expInit',
+                yes: function(index, layero) {
+                    console.log("+++++++++++++++")
+                    var url = "../mgtController/initExp";
+                    myAjax(url, {}, function(response) {
+                        window.parent.exit();
+                    });
+                },
+                btn2: function(index, layero) {
+                    //按钮【提交】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                },
+                btn3: function(index, layero) {
+                    //按钮【关闭】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+        function myAjax(url, data, callback) {
+            $.ajax({
+                type: "post",
+                url: url,
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(response) {
+                    callback(response);
+                }
+            });
+        }
+
+        function jump(url) {
+            $('.body-right iframe').attr('src', url)
+        }
+        $('#exit').click(function() {
+            window.parent.exit();
+        })
+    </script>
+</body>
+
+</html>

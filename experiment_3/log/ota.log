@@ -1,0 +1,309 @@
+2024-06-02 10:30:53.841  INFO 23148 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 1.8.0_341 on LAPTOP-ZZ with PID 23148 (D:\Java\code\experiment\target\classes started by 中中 in D:\Java\code\experiment)
+2024-06-02 10:30:53.848  INFO 23148 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-06-02 10:30:54.485 DEBUG 23148 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Searching for mappers annotated with @Mapper
+2024-06-02 10:30:54.485 DEBUG 23148 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Using auto-configuration base package 'com.example.demo'
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\CalculationMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\CountDownMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\EarningsMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\ExperimentSessionMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\ExportMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\FundInfoMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\FundSumMapper.class]
+2024-06-02 10:30:54.565 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\GlobalConfigMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\InitMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\InvestDecisionMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\LoginMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\LotteryOneMepper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\LotteryTwoMepper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\ProfitMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\QuestMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\SessionTesteeMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\SubjectMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\TestSessionMapper.class]
+2024-06-02 10:30:54.566 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\TesteeActionMapper.class]
+2024-06-02 10:30:54.567 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [D:\Java\code\experiment\target\classes\com\example\demo\Dao\TesteeScheduleMapper.class]
+2024-06-02 10:30:54.568 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'calculationMapper' and 'com.example.demo.Dao.CalculationMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'calculationMapper'.
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'countDownMapper' and 'com.example.demo.Dao.CountDownMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'countDownMapper'.
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'earningsMapper' and 'com.example.demo.Dao.EarningsMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'earningsMapper'.
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'experimentSessionMapper' and 'com.example.demo.Dao.ExperimentSessionMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'experimentSessionMapper'.
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'exportMapper' and 'com.example.demo.Dao.ExportMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'exportMapper'.
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundInfoMapper' and 'com.example.demo.Dao.FundInfoMapper' mapperInterface
+2024-06-02 10:30:54.570 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundInfoMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'fundSumMapper' and 'com.example.demo.Dao.FundSumMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'fundSumMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'globalConfigMapper' and 'com.example.demo.Dao.GlobalConfigMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'globalConfigMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'initMapper' and 'com.example.demo.Dao.InitMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'initMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'investDecisionMapper' and 'com.example.demo.Dao.InvestDecisionMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'investDecisionMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'loginMapper' and 'com.example.demo.Dao.LoginMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'loginMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryOneMepper' and 'com.example.demo.Dao.LotteryOneMepper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryOneMepper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'lotteryTwoMepper' and 'com.example.demo.Dao.LotteryTwoMepper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'lotteryTwoMepper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'profitMapper' and 'com.example.demo.Dao.ProfitMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'profitMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'questMapper' and 'com.example.demo.Dao.QuestMapper' mapperInterface
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'questMapper'.
+2024-06-02 10:30:54.571 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'sessionTesteeMapper' and 'com.example.demo.Dao.SessionTesteeMapper' mapperInterface
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'sessionTesteeMapper'.
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'subjectMapper' and 'com.example.demo.Dao.SubjectMapper' mapperInterface
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'subjectMapper'.
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testSessionMapper' and 'com.example.demo.Dao.TestSessionMapper' mapperInterface
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testSessionMapper'.
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeActionMapper' and 'com.example.demo.Dao.TesteeActionMapper' mapperInterface
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeActionMapper'.
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'testeeScheduleMapper' and 'com.example.demo.Dao.TesteeScheduleMapper' mapperInterface
+2024-06-02 10:30:54.572 DEBUG 23148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'testeeScheduleMapper'.
+2024-06-02 10:30:54.960  INFO 23148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-02 10:30:54.967  INFO 23148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02 10:30:54.967  INFO 23148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-06-02 10:30:55.189  INFO 23148 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02 10:30:55.189  INFO 23148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1312 ms
+2024-06-02 10:30:55.456 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\CalculationMapper.xml]'
+2024-06-02 10:30:55.468 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\CountDownMapper.xml]'
+2024-06-02 10:30:55.477 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\EarningsMapper.xml]'
+2024-06-02 10:30:55.492 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\ExperimentSessionMapper.xml]'
+2024-06-02 10:30:55.503 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\ExportMapper.xml]'
+2024-06-02 10:30:55.510 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\FundInfoMapper.xml]'
+2024-06-02 10:30:55.518 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\FundSumMapper.xml]'
+2024-06-02 10:30:55.523 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\GlobalConfigMapper.xml]'
+2024-06-02 10:30:55.528 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\InitMapper.xml]'
+2024-06-02 10:30:55.533 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\InvestDecisionMapper.xml]'
+2024-06-02 10:30:55.538 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\LogionMapper.xml]'
+2024-06-02 10:30:55.543 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\LotteryOneMepper.xml]'
+2024-06-02 10:30:55.548 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\LotteryTwoMepper.xml]'
+2024-06-02 10:30:55.557 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\ProfitMapper.xml]'
+2024-06-02 10:30:55.562 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\QuestMapper.xml]'
+2024-06-02 10:30:55.568 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\SessionTesteeMapper.xml]'
+2024-06-02 10:30:55.572 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\SubjectMapper.xml]'
+2024-06-02 10:30:55.579 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\TestSessionMapper.xml]'
+2024-06-02 10:30:55.584 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\TesteeActionMapper.xml]'
+2024-06-02 10:30:55.590 DEBUG 23148 --- [main] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [D:\Java\code\experiment\target\classes\mybatis\TesteeSchedulMapper.xml]'
+2024-06-02 10:30:55.815 DEBUG 23148 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-02 10:30:55.867 DEBUG 23148 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 63 mappings in 'requestMappingHandlerMapping'
+2024-06-02 10:30:55.879 DEBUG 23148 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-02 10:30:55.883 DEBUG 23148 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-02 10:30:55.893 DEBUG 23148 --- [main] o.m.s.b.a.MybatisAutoConfiguration       : Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2024-06-02 10:30:55.955  INFO 23148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-02 10:30:55.960  INFO 23148 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.427 seconds (JVM running for 3.05)
+2024-06-02 10:31:11.864  INFO 23148 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-02 10:31:11.864  INFO 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-02 10:31:11.865 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-02 10:31:11.865 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-02 10:31:11.865 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-02 10:31:11.865 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6e944c88
+2024-06-02 10:31:11.866 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@1462d597
+2024-06-02 10:31:11.866 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-02 10:31:11.866  INFO 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-06-02 10:31:11.878 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/index", parameters={}
+2024-06-02 10:31:11.885 DEBUG 23148 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Login.LoginController#Exptologin()
+2024-06-02 10:31:11.902 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:11.903 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/experiment/main.html', model {}
+2024-06-02 10:31:11.905 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/experiment/main.html]
+2024-06-02 10:31:11.910 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/experiment/main.html", parameters={}
+2024-06-02 10:31:11.913 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:11.917 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 304
+2024-06-02 10:31:11.918 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:11.971 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/static/js/layer/layui/css/layui.css", parameters={}
+2024-06-02 10:31:11.972 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:11.975 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:11.976 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/static/css/common2.css", parameters={}
+2024-06-02 10:31:11.978 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:11.980 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/stamain.htmltic/js/layer/layer.js", parameters={}
+2024-06-02 10:31:11.980 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/static/js/jquery-1.8.3.min.js", parameters={}
+2024-06-02 10:31:11.980 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:11.980 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:11.981 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:11.982 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:11.982 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-02 10:31:11.982 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-02 10:31:11.982 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-02 10:31:11.984 DEBUG 23148 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-02 10:31:12.005 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-06-02 10:31:12.006 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Jun 02 10:31:11 CST 2024, status=404, error=Not Found, path=/stamain.htmltic/js/layer (truncated)...]
+2024-06-02 10:31:12.009 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/indexLogin", parameters={}
+2024-06-02 10:31:12.010 DEBUG 23148 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Login.LoginController#indextologin()
+2024-06-02 10:31:12.011 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:12.011 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.servlet.view.InternalResourceView  : View name '/views/include/login.html', model {}
+2024-06-02 10:31:12.011 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/include/login.html]
+2024-06-02 10:31:12.011 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/include/login.html", parameters={}
+2024-06-02 10:31:12.011 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:12.019 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:31:12.019 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:31:12.025 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/img/icon1.png", parameters={}
+2024-06-02 10:31:12.027 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:12.028 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:12.039 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-02 10:31:12.062 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/static/img/icon3.png", parameters={}
+2024-06-02 10:31:12.064 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:12.065 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:12.120 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-06-02 10:31:12.121 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:12.122 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-02 10:31:12.122 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-02 10:31:12.122 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-02 10:31:12.123 DEBUG 23148 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-02 10:31:12.123 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-06-02 10:31:12.124 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Jun 02 10:31:12 CST 2024, status=404, error=Not Found, path=/favicon.ico}]
+2024-06-02 10:31:12.137 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-02 10:31:20.792 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/Mtgindex", parameters={}
+2024-06-02 10:31:20.795 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:20.796 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-02 10:31:20.796 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-02 10:31:20.797 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-02 10:31:20.798 DEBUG 23148 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-06-02 10:31:20.806 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-06-02 10:31:20.810 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-02 10:31:34.385 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/MtgIndex", parameters={}
+2024-06-02 10:31:34.385 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:34.387 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-02 10:31:34.387 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-02 10:31:34.387 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-02 10:31:34.388 DEBUG 23148 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-06-02 10:31:34.390 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-06-02 10:31:34.390 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-02 10:31:44.931 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/MgtIndex", parameters={}
+2024-06-02 10:31:44.931 DEBUG 23148 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtToLogin()
+2024-06-02 10:31:44.933 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:44.933 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/main.html', model {}
+2024-06-02 10:31:44.933 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/main.html]
+2024-06-02 10:31:44.934 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/main.html", parameters={}
+2024-06-02 10:31:44.936 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:44.944 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:31:44.944 DEBUG 23148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:31:45.013 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/static/js/layer/layer.js", parameters={}
+2024-06-02 10:31:45.015 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:45.016 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/MgtJumpPage/login", parameters={}
+2024-06-02 10:31:45.016 DEBUG 23148 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtToPage(String)
+2024-06-02 10:31:45.017 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/static/js/layer/theme/default/layer.css?v=3.5.1", parameters={masked}
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/login.html', model {}
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/login.html]
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:45.026 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/login.html", parameters={}
+2024-06-02 10:31:45.027 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:45.032 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:31:45.032 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/checkLogin", parameters={}
+2024-06-02 10:31:45.032 DEBUG 23148 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtCheckLogin(HttpServletRequest)
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/login.html', model {}
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/login.html]
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/login.html", parameters={}
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:31:45.034 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:45.036 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:31:45.037 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:31:45.075 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/static/img/title_bg.png", parameters={}
+2024-06-02 10:31:45.076 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:45.078 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:31:50.526 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/mgtLogin?user=&password=", parameters={masked}
+2024-06-02 10:31:50.527 DEBUG 23148 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtLogin(String, String, HttpServletRequest)
+2024-06-02 10:31:50.530 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:31:50.530 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/login.html', model {}
+2024-06-02 10:31:50.530 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/login.html]
+2024-06-02 10:31:50.530 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/login.html?user=&password=", parameters={masked}
+2024-06-02 10:31:50.531 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:31:50.533 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:31:50.533 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:37:45.829 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/mgtLogin?user=&password=123456", parameters={masked}
+2024-06-02 10:37:45.830 DEBUG 23148 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtLogin(String, String, HttpServletRequest)
+2024-06-02 10:37:45.831 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:37:45.831 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/login.html', model {}
+2024-06-02 10:37:45.831 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/login.html]
+2024-06-02 10:37:45.832 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/login.html?user=&password=123456", parameters={masked}
+2024-06-02 10:37:45.832 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:37:45.835 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:37:45.837 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:40:48.924 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/mgtLogin?user=admin&password=123456", parameters={masked}
+2024-06-02 10:40:48.925 DEBUG 23148 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtLogin(String, String, HttpServletRequest)
+2024-06-02 10:40:48.936 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : Creating a new SqlSession
+2024-06-02 10:40:48.941 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6382062c] was not registered for synchronization because synchronization is not active
+2024-06-02 10:40:48.950  INFO 23148 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-02 10:40:49.055  INFO 23148 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-02 10:40:49.057 DEBUG 23148 --- [http-nio-8080-exec-2] o.m.s.t.SpringManagedTransaction         : JDBC Connection [HikariProxyConnection@1646124318 wrapping com.mysql.cj.jdbc.ConnectionImpl@6f8ce85d] will not be managed by Spring
+2024-06-02 10:40:49.082 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6382062c]
+2024-06-02 10:40:49.084 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : Creating a new SqlSession
+2024-06-02 10:40:49.084 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ef277d] was not registered for synchronization because synchronization is not active
+2024-06-02 10:40:49.084 DEBUG 23148 --- [http-nio-8080-exec-2] o.m.s.t.SpringManagedTransaction         : JDBC Connection [HikariProxyConnection@1852442473 wrapping com.mysql.cj.jdbc.ConnectionImpl@6f8ce85d] will not be managed by Spring
+2024-06-02 10:40:49.085 DEBUG 23148 --- [http-nio-8080-exec-2] org.mybatis.spring.SqlSessionUtils       : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ef277d]
+2024-06-02 10:40:49.086 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:40:49.086 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/indexPage.html', model {}
+2024-06-02 10:40:49.086 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/indexPage.html]
+2024-06-02 10:40:49.086 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/indexPage.html?user=admin&password=123456", parameters={masked}
+2024-06-02 10:40:49.086 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:40:49.092 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:40:49.092 DEBUG 23148 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:40:49.123 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/static/img/login.png", parameters={}
+2024-06-02 10:40:49.124 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:40:49.133 DEBUG 23148 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:40:49.173 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/MgtJumpPage/fundInfo", parameters={}
+2024-06-02 10:40:49.174 DEBUG 23148 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtToPage(String)
+2024-06-02 10:40:49.174 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:40:49.176 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/fundInfo.html', model {}
+2024-06-02 10:40:49.176 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/fundInfo.html]
+2024-06-02 10:40:49.176 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/fundInfo.html", parameters={}
+2024-06-02 10:40:49.176 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:40:49.188 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:40:49.189 DEBUG 23148 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:40:49.254 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/static/js/layer/layui/layui.js", parameters={}
+2024-06-02 10:40:49.255 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:40:49.257 DEBUG 23148 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:40:49.298 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/mgtController/listFundSum", parameters={}
+2024-06-02 10:40:49.298 DEBUG 23148 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Management.MgtController#listFundSum()
+2024-06-02 10:40:49.305 DEBUG 23148 --- [http-nio-8080-exec-3] org.mybatis.spring.SqlSessionUtils       : Creating a new SqlSession
+2024-06-02 10:40:49.305 DEBUG 23148 --- [http-nio-8080-exec-3] org.mybatis.spring.SqlSessionUtils       : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f835b44] was not registered for synchronization because synchronization is not active
+2024-06-02 10:40:49.305 DEBUG 23148 --- [http-nio-8080-exec-3] o.m.s.t.SpringManagedTransaction         : JDBC Connection [HikariProxyConnection@186931598 wrapping com.mysql.cj.jdbc.ConnectionImpl@6f8ce85d] will not be managed by Spring
+2024-06-02 10:40:49.317 DEBUG 23148 --- [http-nio-8080-exec-3] org.mybatis.spring.SqlSessionUtils       : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f835b44]
+2024-06-02 10:40:49.321 DEBUG 23148 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-06-02 10:40:49.323 DEBUG 23148 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{result=[{fundId=1, testPart=基准, fundGroup=A, fundDataType=1}, {fundId=1, testPart=业绩, fundGroup=A,  (truncated)...]
+2024-06-02 10:40:49.327 DEBUG 23148 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:41:08.326 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/MgtJumpPage/fundData", parameters={}
+2024-06-02 10:41:08.326 DEBUG 23148 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtToPage(String)
+2024-06-02 10:41:08.326 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:41:08.326 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/fundData.html', model {}
+2024-06-02 10:41:08.327 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/fundData.html]
+2024-06-02 10:41:08.327 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/fundData.html", parameters={}
+2024-06-02 10:41:08.327 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:41:08.335 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2024-06-02 10:41:08.336 DEBUG 23148 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:41:08.402 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/mgtController/listFundInfo", parameters={}
+2024-06-02 10:41:08.403 DEBUG 23148 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Management.MgtController#listFundInfo()
+2024-06-02 10:41:08.413 DEBUG 23148 --- [http-nio-8080-exec-8] org.mybatis.spring.SqlSessionUtils       : Creating a new SqlSession
+2024-06-02 10:41:08.413 DEBUG 23148 --- [http-nio-8080-exec-8] org.mybatis.spring.SqlSessionUtils       : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@153c658a] was not registered for synchronization because synchronization is not active
+2024-06-02 10:41:08.414 DEBUG 23148 --- [http-nio-8080-exec-8] o.m.s.t.SpringManagedTransaction         : JDBC Connection [HikariProxyConnection@1933167236 wrapping com.mysql.cj.jdbc.ConnectionImpl@6f8ce85d] will not be managed by Spring
+2024-06-02 10:41:08.422 DEBUG 23148 --- [http-nio-8080-exec-8] org.mybatis.spring.SqlSessionUtils       : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@153c658a]
+2024-06-02 10:41:08.423 DEBUG 23148 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-06-02 10:41:08.423 DEBUG 23148 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [{result=[{fundId=1, fundGroup=A, testStageId=1}, {fundId=2, fundGroup=A, testStageId=1}, {fundId=3,  (truncated)...]
+2024-06-02 10:41:08.424 DEBUG 23148 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 10:41:10.947 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/MgtJumpPage/experimentData", parameters={}
+2024-06-02 10:41:10.948 DEBUG 23148 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.MgtLoginController.MgtLoginController#mgtToPage(String)
+2024-06-02 10:41:10.949 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2024-06-02 10:41:10.949 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : View name '/views/modules/management/experimentData.html', model {}
+2024-06-02 10:41:10.949 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [/views/modules/management/experimentData.html]
+2024-06-02 10:41:10.949 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/views/modules/management/experimentData.html", parameters={}
+2024-06-02 10:41:10.950 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [], ServletContext [/]]
+2024-06-02 10:41:10.951 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 304
+2024-06-02 10:41:10.951 DEBUG 23148 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-06-02 10:41:11.023 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/mgtController/listExpSession", parameters={}
+2024-06-02 10:41:11.024 DEBUG 23148 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.Controller.Management.MgtController#listExpSession()
+2024-06-02 10:41:11.027 DEBUG 23148 --- [http-nio-8080-exec-10] org.mybatis.spring.SqlSessionUtils       : Creating a new SqlSession
+2024-06-02 10:41:11.027 DEBUG 23148 --- [http-nio-8080-exec-10] org.mybatis.spring.SqlSessionUtils       : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67ff4d53] was not registered for synchronization because synchronization is not active
+2024-06-02 10:41:11.028 DEBUG 23148 --- [http-nio-8080-exec-10] o.m.s.t.SpringManagedTransaction         : JDBC Connection [HikariProxyConnection@1673577844 wrapping com.mysql.cj.jdbc.ConnectionImpl@6f8ce85d] will not be managed by Spring
+2024-06-02 10:41:11.043 DEBUG 23148 --- [http-nio-8080-exec-10] org.mybatis.spring.SqlSessionUtils       : Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67ff4d53]
+2024-06-02 10:41:11.044 DEBUG 23148 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2024-06-02 10:41:11.044 DEBUG 23148 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [{result=[{testeeNum=3, startEnd=1, fundGroup=A, testStageId=2, createdTime=2024-04-07 14:40:35, star (truncated)...]
+2024-06-02 10:41:11.046 DEBUG 23148 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-02 13:47:42.745  WARN 23148 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h23s443ms814µs200ns).
+2024-06-02 15:31:10.463  WARN 23148 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h43m29s954ms90µs700ns).
+2024-06-02 15:31:46.217  INFO 23148 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-02 15:31:46.226  INFO 23148 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

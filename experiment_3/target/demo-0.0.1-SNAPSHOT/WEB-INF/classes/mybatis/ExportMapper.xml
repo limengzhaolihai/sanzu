@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.ExportMapper">
+
+    <select id="listInvestDecision" resultType="java.util.Map">
+        SELECT invest_decision_table.TEST_ID,
+               invest_decision_table.TEST_SESSION_ID,
+               invest_decision_table.TEST_STAGE_ID,
+               invest_decision_table.TEST_ROUND_ID,
+               invest_decision_table.TESTEE_ID,
+               invest_decision_table.FUND_ID,
+               invest_decision_table.FUND_RATIO,
+               invest_decision_table.CREATED_TIME
+        FROM invest_decision_table
+    </select>
+    <select id="listTestIncome" resultType="java.util.Map">
+        SELECT test_income_table.TESTEE_ID,
+               test_income_table.TEST_ID,
+               test_income_table.TEST_SESSION_ID,
+               test_income_table.TEST_STAGE_ID,
+               test_income_table.TEST_ROUND_ID,
+               test_income_table.SUM_INCOME,
+               test_income_table.SESSION_INCOME,
+               test_income_table.ACC_INCOME,
+               test_income_table.FUND_ONE_INCOME,
+               test_income_table.FUND_TWO_INCOME,
+               test_income_table.FUND_THR_INCOME,
+               test_income_table.UNALLOCAT_INCOME,
+               test_income_table.CREATED_TIME
+        FROM test_income_table
+    </select>
+    <select id="listCalTmp" resultType="java.util.Map">
+        SELECT cal_tmp_table.QUESTION_ID,
+               cal_tmp_table.TESTEE_ID,
+               cal_tmp_table.PARA1,
+               cal_tmp_table.PARA2,
+               cal_tmp_table.TRUE_ANSWER,
+               cal_tmp_table.TEST_ANSWER,
+               cal_tmp_table.FLAG,
+               cal_tmp_table.TEST_STAGE_ID,
+               cal_tmp_table.CREATE_TIME
+        FROM cal_tmp_table
+    </select>
+    <select id="listLottery" resultType="java.util.Map">
+        SELECT lottery_table.TESTEE_ID,
+               lottery_table.TEST_ID,
+               lottery_table.TEST_SESSION_ID,
+               lottery_table.TEST_STAGE_ID,
+               lottery_table.TEST_ROUND_ID,
+               lottery_table.TOPIC_ID,
+               lottery_table.`OPTION`,
+               lottery_table.PROBABILITY_1,
+               lottery_table.COUNT_1,
+               lottery_table.PROBABILITY_2,
+               lottery_table.COUNY_2,
+               lottery_table.CREATED_TIME
+        FROM lottery_table
+    </select>
+    <select id="listQuest" resultType="java.util.Map">
+        SELECT quest_table.TESTEE_ID,
+               quest_table.TEST_ID,
+               quest_table.TEST_SESSION_ID,
+               quest_table.TEST_STAGE_ID,
+               quest_table.TEST_ROUND_ID,
+               quest_table.TOPIC_ID,
+               quest_table.`OPTION`,
+               quest_table.CREATED_TIME
+        FROM quest_table
+    </select>
+    <select id="listStageIncome" resultType="java.util.Map">
+        SELECT stage_income_table.TESTEE_ID,
+               stage_income_table.TEST_ID,
+               stage_income_table.TEST_SESSION_ID,
+               stage_income_table.TEST_STAGE_ID,
+               stage_income_table.STAGE_INCOME,
+               stage_income_table.CREATED_TIME
+        FROM stage_income_table
+    </select>
+    <select id="listInvestDecisionByPkeys" resultType="java.util.Map">
+        SELECT invest_decision_table.TEST_ID,
+               invest_decision_table.TEST_SESSION_ID,
+               invest_decision_table.TEST_STAGE_ID,
+               invest_decision_table.TEST_ROUND_ID,
+               invest_decision_table.TESTEE_ID,
+               invest_decision_table.FUND_ID,
+               invest_decision_table.FUND_RATIO,
+               invest_decision_table.CREATED_TIME
+        FROM invest_decision_table
+        WHERE invest_decision_table.TEST_ID = #{param.testId}
+          AND invest_decision_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="listTestIncomeByPkeys" resultType="java.util.Map">
+        SELECT test_income_table.TESTEE_ID,
+               test_income_table.TEST_ID,
+               test_income_table.TEST_SESSION_ID,
+               test_income_table.TEST_STAGE_ID,
+               test_income_table.TEST_ROUND_ID,
+               test_income_table.SUM_INCOME,
+               test_income_table.SESSION_INCOME,
+               test_income_table.ACC_INCOME,
+               test_income_table.FUND_ONE_INCOME,
+               test_income_table.FUND_TWO_INCOME,
+               test_income_table.FUND_THR_INCOME,
+               test_income_table.UNALLOCAT_INCOME,
+               test_income_table.CREATED_TIME
+        FROM test_income_table
+        WHERE test_income_table.TEST_ID = #{param.testId}
+          AND test_income_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="listCalTmpByPkeys" resultType="java.util.Map">
+        SELECT cal_tmp_table.QUESTION_ID,
+               cal_tmp_table.TESTEE_ID,
+               cal_tmp_table.PARA1,
+               cal_tmp_table.PARA2,
+               cal_tmp_table.TRUE_ANSWER,
+               cal_tmp_table.TEST_ANSWER,
+               cal_tmp_table.FLAG,
+               cal_tmp_table.TEST_STAGE_ID,
+               cal_tmp_table.CREATE_TIME
+        FROM cal_tmp_table
+        WHERE cal_tmp_table.TESTEE_ID IN (SELECT testee_schedule.TESTEE_ID
+                                          FROM testee_schedule
+                                          WHERE testee_schedule.TEST_ID = #{param.testId}
+                                            AND testee_schedule.TEST_SESSION_ID = #{param.testSessionId})
+
+    </select>
+    <select id="listLotteryByPkeys" resultType="java.util.Map">
+        SELECT lottery_table.TESTEE_ID,
+               lottery_table.TEST_ID,
+               lottery_table.TEST_SESSION_ID,
+               lottery_table.TEST_STAGE_ID,
+               lottery_table.TEST_ROUND_ID,
+               lottery_table.TOPIC_ID,
+               lottery_table.`OPTION`,
+               lottery_table.PROBABILITY_1,
+               lottery_table.COUNT_1,
+               lottery_table.PROBABILITY_2,
+               lottery_table.COUNY_2,
+               lottery_table.CREATED_TIME
+        FROM lottery_table
+        WHERE lottery_table.TEST_ID = #{param.testId}
+          AND lottery_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="listQuestByPkeys" resultType="java.util.Map">
+        SELECT quest_table.TESTEE_ID,
+               quest_table.TEST_ID,
+               quest_table.TEST_SESSION_ID,
+               quest_table.TEST_STAGE_ID,
+               quest_table.TEST_ROUND_ID,
+               quest_table.TOPIC_ID,
+               quest_table.`OPTION`,
+               quest_table.CREATED_TIME
+        FROM quest_table
+        WHERE quest_table.TEST_ID = #{param.testId}
+          AND quest_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="listStageIncomeByPkeys" resultType="java.util.Map">
+        SELECT stage_income_table.TESTEE_ID,
+               stage_income_table.TEST_ID,
+               stage_income_table.TEST_SESSION_ID,
+               stage_income_table.TEST_STAGE_ID,
+               stage_income_table.STAGE_INCOME,
+               stage_income_table.CREATED_TIME
+        FROM stage_income_table
+        WHERE stage_income_table.TEST_ID = #{param.testId}
+          AND stage_income_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+    <select id="listAction" resultType="java.util.Map">
+        SELECT action_table.id,
+               action_table.TESTEE_ID,
+               action_table.TEST_ID,
+               action_table.TEST_SESSION_ID,
+               action_table.TEST_STAGE_ID,
+               action_table.TEST_ROUND_ID,
+               action_table.PAGE_FLAG,
+               action_table.PAGE_FLAG_EXPLAIN,
+               action_table.MODULE_NAME,
+               action_table.SELECT_CONDITION,
+               action_table.STOP_TIME,
+               action_table.CREATE_TIME
+        FROM action_table
+    </select>
+    <select id="listActionByPkeys" resultType="java.util.Map">
+        SELECT action_table.id,
+               action_table.TESTEE_ID,
+               action_table.TEST_ID,
+               action_table.TEST_SESSION_ID,
+               action_table.TEST_STAGE_ID,
+               action_table.TEST_ROUND_ID,
+               action_table.PAGE_FLAG,
+               action_table.PAGE_FLAG_EXPLAIN,
+               action_table.MODULE_NAME,
+               action_table.SELECT_CONDITION,
+               action_table.STOP_TIME,
+               action_table.CREATE_TIME
+        FROM action_table
+        WHERE action_table.TEST_ID = #{param.testId}
+          AND action_table.TEST_SESSION_ID = #{param.testSessionId}
+    </select>
+</mapper>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实验数据</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .content .title {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .title .blue {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+        
+        .content table {
+            width: 95%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .content table thead {
+            height: 40px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table tbody {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table span {
+            margin: 0 10px;
+        }
+        
+        .content table th,
+        .content table td {
+            height: 40px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+        
+        .content table td span {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        
+        .content table td .edit {
+            color: #3662EC;
+        }
+        
+        .content table td .stage {
+            color: #ecc136;
+        }
+        
+        .content table td .exportSession {
+            color: #54ec36;
+        }
+        
+        .content table td .del {
+            color: #FA5151;
+        }
+        
+        .content .btn {
+            width: 95%;
+            margin-top: 15px;
+        }
+        
+        .content .btn button {
+            width: 120px;
+            height: 40px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #4F7BFF;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        
+        .layui-layer-btn {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .layui-layer-btn a {
+            width: 150px !important;
+            height: 50px !important;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        
+        .layui-layer-btn0 {
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%) !important;
+            box-shadow: 0px 4px 10px 0px #0859FF !important;
+            border: 1px solid #4F7BFF !important;
+            color: #FFFFFF !important;
+        }
+        
+        .layui-layer-btn1 {
+            background: linear-gradient(90deg, #dc2929 0%, #ff0202 100%) !important;
+            box-shadow: 0px 4px 10px 0px #dc2929 !important;
+            border: 1px solid #dc2929 !important;
+            color: #FFFFFF !important;
+        }
+        
+        .layui-layer-btn a:last-child {
+            background: #eee !important;
+            box-shadow: 0px 4px 10px 0px #eee !important;
+            border: 1px solid #ccc !important;
+            color: #333 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="blue"></div>
+            <span>实验数据</span>
+        </div>
+        <div class="btn">
+            <button type="button" class="export">实验数据导出</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>实验编号</th>
+                    <th>实验场次</th>
+                    <!--                    <th>数据类型</th>-->
+                    <th>被测试者人数</th>
+                    <th>实验开始时间</th>
+                    <th>实验状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../static/js/layer/layer.js"></script>
+    <script src="../../../static/js/layer/layui/layui.js"></script>
+    <script>
+        function myAjax(url, data, callback) {
+            $.ajax({
+                type: "post",
+                url: url,
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(response) {
+                    callback(response);
+                }
+            });
+        }
+
+        function init() {
+            var url = '../mgtController/listExpSession'
+            myAjax(url, {}, function(res) {
+                console.log(res);
+                render(res.result);
+            })
+        }
+
+        function dateTimeToDataTimeStr(dt) {
+            var str = '';
+            if (dt != null && dt != '') {
+                $.each(dt.split('T'), function(insex, value) {
+                    str += value;
+                    str += " ";
+                })
+            }
+            return str;
+        }
+
+        function download(url) {
+            try {
+                var elemIF = document.createElement("iframe");
+                elemIF.src = url;
+                elemIF.style.display = "none";
+                document.body.appendChild(elemIF);
+            } catch (e) {
+                alert("下载异常！");
+            }
+        }
+
+        function stageFlagToStageName(flag, stage) {
+            switch (flag) {
+                case '0':
+                    return '关闭';
+                    break;
+                case '1':
+                    return '开始/' + stageIdToStageStr(stage);
+                    break;
+                case '2':
+                    return '准备';
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function stageIdToStageStr(stage) {
+            var str = "阶段" + stage + "进行中";
+            return str;
+        }
+
+        function render(rdata) {
+            $('tbody').empty();
+            var html = "";
+            for (var i = 0; i < rdata.length; i++) {
+                html += "<tr>" +
+                    "<td>" + (i + 1) + "</td>" +
+                    "<td>" + rdata[i].testId + "</td>" +
+                    "<td>第" + rdata[i].testSessionId + "场</td>" +
+                    // "<td>" + rdata[i].fundGroup + "</td>" +
+                    "<td>" + rdata[i].testeeNum + "人</td>" +
+                    "<td>" + dateTimeToDataTimeStr(rdata[i].startTime) + "</td>" +
+                    "<td>" + stageFlagToStageName(rdata[i].startEnd, rdata[i].testStageId) + "</td>" +
+                    "<td testid='" + rdata[i].testId + "' testSessionId = '" + rdata[i].testSessionId + "'>" +
+                    "<span class='stage'>查看阶段</span>" +
+                    "<span class='reward'>收益/报酬</span>" +
+                    "<span class='exportSession'>导出本场数据</span>" +
+                    "</td>" +
+                    "</tr>";
+            }
+            $('tbody').html(html);
+        }
+
+        // 导出弹窗
+        $('.export').off().on('click', function() {
+            // parent.layer.open({
+            layer.open({
+                type: 2,
+                title: false,
+                skin: close,
+                area: ['500px', '300px'],
+                btn: ['导出', '关闭'],
+                content: './export',
+                yes: function(index, layero) {
+                    //按钮【保存】的回调
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    // 需修改2：新增弹窗——保存接口
+                    var url = "../mgtController/exportTable";
+                    myAjax(url, {}, function(response) {
+                        console.log(response);
+                        $.each(response.pathList, function(index, value) {
+                            download("/download?path=" + value)
+                        })
+
+                        layer.close(layer.index);
+                        init();
+                    });
+                    // body.find("#transmit").click();//执行子页面的方法
+                    // body.find('input').val('Hi，我是从父页来的')
+
+                },
+                btn2: function(index, layero) {
+                    //按钮【提交】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                },
+                btn3: function(index, layero) {
+                    //按钮【关闭】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+        // 需修改8：阶段弹窗——回调
+        // 阶段弹窗
+        $('tbody').on('click', 'tr td .stage', function() {
+            var id = $(this).parent().attr('id'); // 获取实验唯一标识（拼在接口后面）
+            var pKeys = {
+                testId: $(this).parent().attr('testId'),
+                testSessionId: $(this).parent().attr('testSessionId')
+            }
+            layer.open({
+                type: 2,
+                title: false,
+                skin: close,
+                area: ['1000px', '800px'],
+                btn: ['刷新', '关闭'],
+                content: './expStage',
+                success: function(layero, index) {
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    // 需修改6：编辑弹窗——数据显示接口
+                    var url = "../mgtController/listSchedule";
+                    myAjax(url, pKeys, function(response) {
+                        console.log(response);
+                        iframeWin.render(response.result);
+                    })
+                },
+                yes: function(index, layero) {
+                    //按钮【保存】的回调
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    var url = "../mgtController/listSchedule";
+                    myAjax(url, pKeys, function(response) {
+                            console.log(response);
+                            iframeWin.render(response.result);
+                        })
+                        // body.find("#transmit").click();//执行子页面的方法
+                        // body.find('input').val('Hi，我是从父页来的')
+
+                },
+                btn2: function(index, layero) {
+                    //按钮【提交】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                },
+                btn3: function(index, layero) {
+                    //按钮【关闭】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+        // 报酬弹窗
+        $('tbody').on('click', 'tr td .reward', function() {
+            var id = $(this).parent().attr('id'); // 获取实验唯一标识（拼在接口后面）
+            var pKeys = {
+                testId: $(this).parent().attr('testId'),
+                testSessionId: $(this).parent().attr('testSessionId')
+            }
+            layer.open({
+                type: 2,
+                title: false,
+                skin: close,
+                area: ['1000px', '800px'],
+                btn: ['刷新', '关闭'],
+                content: './expReward',
+                success: function(layero, index) {
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    // 需修改6：编辑弹窗——数据显示接口
+                    var url = "../mgtController/listReward";
+                    myAjax(url, pKeys, function(response) {
+                        console.log(response);
+                        iframeWin.render(response.result);
+                    })
+                },
+                yes: function(index, layero) {
+                    //按钮【保存】的回调
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    var url = "../mgtController/listSchedule";
+                    myAjax(url, pKeys, function(response) {
+                            console.log(response);
+                            iframeWin.render(response.result);
+                        })
+                        // body.find("#transmit").click();//执行子页面的方法
+                        // body.find('input').val('Hi，我是从父页来的')
+
+                },
+                btn2: function(index, layero) {
+                    //按钮【提交】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                },
+                btn3: function(index, layero) {
+                    //按钮【关闭】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+        // 导出本场数据弹窗
+        $('tbody').on('click', 'tr td .exportSession', function() {
+            var id = $(this).parent().attr('id'); // 获取实验唯一标识（拼在接口后面）
+            var pKeys = {
+                testId: $(this).parent().attr('testId'),
+                testSessionId: $(this).parent().attr('testSessionId')
+            }
+            layer.open({
+                type: 2,
+                title: false,
+                skin: close,
+                area: ['500px', '300px'],
+                btn: ['导出', '关闭'],
+                content: './export',
+                yes: function(index, layero) {
+                    //按钮【保存】的回调
+                    //获取子页面内容
+                    var body = layer.getChildFrame('body', index);
+                    //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                    var iframeWin = window[layero.find('iframe')[0]['name']];
+
+                    // 需修改2：新增弹窗——保存接口
+                    var url = "../mgtController/exportTableByPkeys";
+                    myAjax(url, pKeys, function(response) {
+                        console.log(response);
+                        $.each(response.pathList, function(index, value) {
+                            download("/download?path=" + value)
+                        })
+                        layer.close(layer.index);
+                        init();
+                    });
+                    // body.find("#transmit").click();//执行子页面的方法
+                    // body.find('input').val('Hi，我是从父页来的')
+
+                },
+                btn2: function(index, layero) {
+                    //按钮【提交】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                },
+                btn3: function(index, layero) {
+                    //按钮【关闭】的回调
+
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+        $(function() {
+            init();
+        })
+    </script>
+</body>
+
+</html>

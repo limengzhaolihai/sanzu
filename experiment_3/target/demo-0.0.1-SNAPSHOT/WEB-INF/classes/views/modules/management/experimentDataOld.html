@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验数据</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content .title{
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        .content .title .blue{
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+        .content table{
+            width: 95%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .content table thead{
+            height: 40px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 16px;
+        }
+        .content table tbody{
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+        .content table span{
+            margin: 0 10px;
+        }
+        .content table th, .content table td{
+            height: 40px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+        .content table td span{
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .content table td .edit{
+            color: #3662EC;
+        }
+        .content table td .del{
+            color: #FA5151;
+        }
+        .content .btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .content .btn button{
+            width: 300px;
+            height: 80px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #4F7BFF;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="blue"></div>
+            <span>全局参数设置</span> 
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>试验场次</th>
+                    <th>被试者实验编号</th>
+                    <th>当前所有阶段</th>
+                    <th>当前页面停留时间</th>
+                    <th>阶段1收益</th>
+                    <th>阶段2收益</th>
+                    <th>阶段3收益</th>
+                    <th>阶段4收益</th>
+                    <th>实验总收益</th>
+                    <th>实验报酬总计（元）</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="btn">
+            <button type="button">导出实验数据</button>
+        </div>
+    </div>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            table();
+        })
+        var data = [
+                {
+                    "id":"001",
+                    "num":"1",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                },
+                {
+                    "id":"002",
+                    "num":"2",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                },
+                {
+                    "id":"003",
+                    "num":"3",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                },
+                {
+                    "id":"004",
+                    "num":"4",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                },
+                {
+                    "id":"005",
+                    "num":"5",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                },
+                {
+                    "id":"006",
+                    "num":"6",
+                    "peopleNum":"YN278",
+                    "stage":"阶段1-投资任务第X轮",
+                    "time":"30min",
+                    "profitOne":"1000",
+                    "profitTwo":"401",
+                    "profitThree":"56",
+                    "profitFour":"112",
+                    "profitTotal":"1568",
+                    "money":"65.78"
+                }
+            ]
+        function table(){
+            $('tbody').empty();
+
+            var html = "";
+            for (var i = 0; i < data.length; i++) {
+                html += "<tr>"+
+                            "<td>" + (i + 1) + "</td>"+
+                            "<td>第" + data[i].num + "场</td>"+
+                            "<td>" + data[i].peopleNum + "</td>"+
+                            "<td>" + data[i].stage + "</td>"+
+                            "<td>" + data[i].time + "</td>"+
+                            "<td>" + data[i].profitOne + "</td>"+
+                            "<td>" + data[i].profitTwo + "</td>"+
+                            "<td>" + data[i].profitThree + "</td>"+
+                            "<td>" + data[i].profitFour + "</td>"+
+                            "<td>" + data[i].profitTotal + "</td>"+
+                            "<td>" + data[i].money + "</td>"+
+                        "</tr>";
+            }
+            $('tbody').html(html);
+        }
+    </script>
+</body>
+</html>

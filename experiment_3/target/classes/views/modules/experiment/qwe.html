@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var a=1;
+    function myAjax(url,type,data,callback){
+        $.ajax({
+            url: url,
+            type: type,
+            async: true,
+            data:data,
+            success: function (res) {
+                console.log(res);
+                callback(res);
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        })
+    }
+    $(function (){
+        //ajax获取初始数据
+        myAjax("asdasd",'post',obj,function (res){
+
+        })
+        //数据初始化
+        //调用功能
+    })
+</script>

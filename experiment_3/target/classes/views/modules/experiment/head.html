@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资产配置</title>
+    <link rel="stylesheet" href="../../../static/js/layer/layui/css/layui.css">
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../static/js/layer/layui/layui.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 80px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .down .title{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .title .box{
+            width: 80%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .down .title .box p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content{
+            width: 80%;
+            height: calc(100% - 55px);
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .down .content .nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .down .content .nav .schedule{
+            font-size: 22px;
+            font-weight: bold;
+            color: #3662EC;
+            line-height: 35px;
+        }
+        .down .content .nav .remainder{
+            font-size: 22px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 35px;
+        }
+        .down .content .nav .remainder span{
+            font-size: 34px;
+            font-weight: bold;
+            color: #3662EC;
+        }
+        .iframe{
+            width: 4096px;
+            height:2032px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <p>行为决策实验平台</p>
+        </div>
+        <div class="down">
+            <div class="title">
+                <div class="box">
+                    <p>实验阶段：第一部分---第一周期</p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="nav">
+                    <div class="schedule">
+                        投资任务进度：<span>1/ 12</span>
+                    </div>
+                    <div class="remainder">当前实验周期剩余时间：<span id="time"></span></div>
+                </div>
+                <div class="body">
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // 倒计时
+    var min = sessionStorage.getItem('min'); // 分
+    var sec = sessionStorage.getItem('sec'); // 秒
+    var t;
+    start();
+    function start() {
+        clock();
+        if (sec == 0) {
+            min--;
+            sec = 60;
+        }
+        sec--;
+        // 时间为零跳转交卷页面
+        if (min == 0 && sec == 0) {
+            console.log("时间归零")
+        }
+        //设置计时器，1000毫秒(即1秒)调用函数
+        con = t = setTimeout("start()", 1000);
+
+        //usetime开始
+        var myDate = new Date;
+        var examtime = myDate.getFullYear()+'-'+(myDate.getMonth() + 1)+'-'+myDate.getDate()+' '+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds();
+        var startS = myDate.getSeconds();
+        var startM = myDate.getMinutes();
+    }
+
+    //输出样式判断
+    function clock() {
+        if (min < 10 && sec < 10)
+            document.getElementById("time").innerHTML = "0" + min + " : " + "0" + sec;
+        else if (min < 10)
+            document.getElementById("time").innerHTML = "0" + min + " : " + sec;
+        else if (sec < 10)
+            document.getElementById("time").innerHTML = min + " : " + "0" + sec;
+        else
+            document.getElementById("time").innerHTML = min + " : " + sec;
+    }
+</script>
+</body>
+</html>

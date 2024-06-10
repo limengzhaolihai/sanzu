@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实验报酬查看</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .content .title {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+        
+        .content .title .blue {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+        
+        .content .body {
+            width: 80%;
+            height: calc(100% - 70px);
+        }
+        
+        .content .body .box {
+            width: 100%;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+        }
+        
+        .content .body .box div {
+            width: 100%;
+            height: 60px;
+        }
+        
+        .content .body .box .box-title {
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 23px;
+            letter-spacing: 1px;
+            color: #0256FF;
+            line-height: 60px;
+        }
+        
+        .content .body .box .box-input {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content .body .box .box-textarea {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content .body .box .box-file {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content .body .box .box-input input,
+        .content .body .box .box-input select,
+        .content .body .box .box-textarea textarea {
+            width: 360px;
+            height: 45px;
+            background: #f8f8f8;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+            margin: 0 10px;
+            padding-left: 10px;
+        }
+        
+        select {
+            width: 372px!important;
+        }
+        
+        textarea {
+            width: 350px!important;
+            height: 90px!important;
+            padding: 10px;
+        }
+        
+        .content .body .box label {
+            width: 250px;
+            text-align: right;
+        }
+        
+        .content .body .btn {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+        
+        .content .body .btn button {
+            width: 150px;
+            height: 50px;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content .body .btn button:not(:first-child) {
+            margin-left: 20px;
+        }
+        
+        .content .body .btn button:first-child {
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border: 1px solid #4F7BFF;
+            color: #FFFFFF;
+        }
+        
+        .content .body .btn button:nth-child(2) {
+            background: linear-gradient(90deg, #dc2929 0%, #ff0202 100%);
+            box-shadow: 0px 4px 10px 0px #dc2929;
+            border: 1px solid #dc2929;
+            color: #FFFFFF;
+        }
+        
+        .content .body .btn button:nth-child(3) {
+            background: #ccc;
+            box-shadow: 0px 4px 10px 0px #eee;
+            border: 1px solid #ccc;
+        }
+        
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .content table thead {
+            height: 40px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table tbody {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+        
+        .content table span {
+            margin: 0 10px;
+        }
+        
+        .content table th,
+        .content table td {
+            height: 40px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <div class="blue"></div>
+            <span>基金数据查看</span>
+        </div>
+        <div class="body">
+            <form action="/demo/Expconfiguration" method="post">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>受试者ID</th>
+                                <th>阶段1收益</th>
+                                <th>阶段2收益</th>
+                                <th>阶段3收益</th>
+                                <th>实验报酬</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../../../static/js/jquery-1.8.3.min.js"></script>
+<script>
+    function init(data) {
+        render(data)
+    }
+
+    function render(data) {
+        // $('#testStageId').val(data[0].testStageId);
+        // $('#fundId').val(data[0].fundId);
+        // $('#fundGroup').val(data[0].fundGroup);
+
+        table(data);
+    }
+
+    function getForm() {
+        var data = {};
+        data.fundId = $('#fundId').val();
+        data.fundGroup = $('#fundGroup').val();
+        // 需修改5：实验阶段返回值
+        // 需修改6：基金附件表格返回值
+        return data;
+    }
+
+    function typeToName(str) {
+        if (str == '1') {
+            return '基准'
+        } else if (str == '2') {
+            return '业绩'
+        } else {
+            return '排名'
+        }
+    }
+
+    function table(tableData) {
+        $('tbody').empty();
+
+        var html = "";
+        for (var i = 0; i < tableData.length; i++) {
+            html += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + tableData[i].testeeId + "</td>" +
+                "<td>" + formatStage(tableData[i].stageOne) + "</td>" +
+                "<td>" + formatStage(tableData[i].stageTwo) + "</td>" +
+                "<td>" + formatStage(tableData[i].stageThree) + "</td>" +
+                "<td>" + formatReward(tableData[i].reward) + "</td>" +
+                "</tr>";
+        }
+        $('tbody').html(html);
+    }
+
+    function formatStage(str) {
+        return str === undefined ? '' : Number(str).toFixed(2)
+    }
+
+    function formatReward(str) {
+        return str === undefined ? '' : str
+
+    }
+
+    $('#fresh').click(function() {})
+</script>
+
+</html>

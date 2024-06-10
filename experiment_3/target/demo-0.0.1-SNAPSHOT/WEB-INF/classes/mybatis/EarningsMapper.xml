@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.EarningsMapper">
+    <select id="findTestSesTable" resultType="TestSessionTable">
+        SELECT *
+        from jsexp.test_session_table
+        where TEST_ID = #{test_Id}
+          and TEST_SESSION_ID = #{test_Session_Id}
+          and TEST_STAGE_ID = #{test_Stage_Id}
+          and TEST_ROUND_ID = #{test_Round_Id}
+        limit 1
+    </select>
+    <select id="findFundList" resultType="com.example.demo.Pojo.Po.FundInfoTable">
+        SELECT *
+        from jsexp.fund_info_table
+        where FUND_GROUP = #{Param.fund_group}
+          and FUND_ID = #{index}
+          AND TEST_STAGE_ID = #{Param.test_Stage_Id}
+          and FUND_NUM &lt;= CAST(#{Param.test_Round_Id} AS SIGNED)
+        ORDER BY CAST(FUND_NUM AS SIGNED)
+    </select>
+</mapper>

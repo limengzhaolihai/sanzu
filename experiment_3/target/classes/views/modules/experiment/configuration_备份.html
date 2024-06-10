@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资产配置</title>
+    <link rel="stylesheet" href="../../../static/js/layer/layui/css/layui.css">
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../static/js/layer/layui/layui.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 80px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .down .content{
+            width: 80%;
+            height: calc(100% - 55px);
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .down .content .question{
+            width: 100%;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*flex-wrap: wrap;*/
+        }
+        .down .content .question .card{
+            width: 426px;
+            height: 150px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 10px 0px #4777FF;
+            border-radius: 8px 8px 8px 8px;
+            margin: 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .down .content .question .card p:nth-child(1){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .content .question .card p:nth-child(1) i{
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin-right: 35px;
+        }
+        .down .content .question .card p:nth-child(1) span{
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            line-height: 35px;
+            margin-right: 35px;
+        }
+        .down .content .question .card p:nth-child(2){
+            width: 357px;
+            height: 87px;
+            font-size: 20px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 29px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        /* 增加问题标题的图标 */
+        .down .content .question .card:nth-child(1) p:nth-child(1) i{
+            background: url(../../../static/img/card_icon_1.png) no-repeat;
+        }
+        .down .content .question .card:nth-child(2) p:nth-child(1) i{
+            background: url(../../../static/img/card_icon_2.png) no-repeat;
+        }
+        .down .content .question .card:nth-child(3) p:nth-child(1) i{
+            background: url(../../../static/img/card_icon_3.png) no-repeat;
+        }
+
+        .down .content .tips{
+            width: 100%;
+            margin: 40px 0;
+        }
+        .down .content .tips p{
+            font-size: 24px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 35px;
+        }
+        .down .content .tips p span{
+            color: #EE6526;
+        }
+        .down .content .select{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .down .content .select .row{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .down .content .select .row>p{
+            font-size: 24px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 35px;
+            margin-right: 18px;
+        }
+        .down .content .select .row .box{
+            width: 850px;
+            height: 80px;
+            background: #FFFFFF;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .down .content .select .row .box .slideBox{
+            width: 700px;
+        }
+        .down .content .select .row .box p{
+            width: 65px;
+            font-size: 24px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 35px;
+            margin-left: 30px;
+        }
+        .down .content .select .row .layui-slider {
+            height: 20px;
+        }
+        .down .content .select .row .layui-slider .layui-slider-wrap-btn{
+            width: 26px;
+            height: 26px;
+        }
+        .down .content .confirmBtn{
+            width: 300px;
+            height: 75px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 8px 8px 8px 8px;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .down .content .confirmBtn p{
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="down">
+            <div class="content">
+                <div class="question">
+                    <div class="card">
+                        <p><i></i><span>基金 I</span></p>
+                        <p>拟任基金经理LJW，在管产品之一近1年业绩为20.77%，同类同期平均业绩为7.68%。</p>
+                    </div>
+                    <div class="card">
+                        <p><i></i><span>基金 I</span></p>
+                        <p>拟任基金经理LJW，在管产品之一近1年业绩为20.77%，同类同期平均业绩为7.68%。</p>
+                    </div>
+                    <div class="card">
+                        <p><i></i><span>基金 I</span></p>
+                        <p>拟任基金经理LJW，在管产品之一近1年业绩为20.77%，同类同期平均业绩为7.68%。</p>
+                    </div>
+                </div>
+                <div class="tips">
+                    <p>请您拉动滑动条并做出您本轮的资产配置决策：<span>（注意您有25s的时间完成决策并点击确认提交）</span></p>
+                    <p>当前未配置资产比例为<span style="font-size:36px;font-weight: bold;">75%</span></p>
+                </div>
+                <div class="select">
+                    <div class="row">
+                        <p>基金 I</p>
+                        <div class="box">
+                            <div class="slideBox" id="slideTest1"></div>
+                            <p>0%</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>基金 I</p>
+                        <div class="box">
+                            <div class="slideBox" id="slideTest2"></div>
+                            <p>0%</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>基金 I</p>
+                        <div class="box">
+                            <div class="slideBox" id="slideTest3"></div>
+                            <p>0%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmBtn"><p>确认（<span>18s</span>）</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            layui.use('slider', function(){
+            var slider = layui.slider;
+            
+                //渲染
+                let slide1 = slider.render({
+                    elem: '#slideTest1'  //绑定元素
+                    ,max:100
+                    ,theme:'#0256FF'
+                    ,tips:false
+                    ,change: function(value){
+                        console.log(value) //动态获取滑块数值
+                        $('#slideTest1').next().html(value+'%')
+                    }
+                });
+                let slide2 = slider.render({
+                    elem: '#slideTest2'  //绑定元素
+                    ,max:100
+                    ,theme:'#0256FF'
+                    ,tips:false
+                    ,change: function(value){
+                        console.log(value) //动态获取滑块数值
+                        $('#slideTest2').next().html(value+'%')
+                    }
+                });
+                let slide3 = slider.render({
+                    elem: '#slideTest3'  //绑定元素
+                    ,max:100
+                    ,theme:'#0256FF'
+                    ,tips:false
+                    ,change: function(value){
+                        console.log(value) //动态获取滑块数值
+                        $('#slideTest3').next().html(value+'%')
+                    }
+                });
+                // 强制改变按钮位置
+                $('.down .content .select .row .layui-slider .layui-slider-wrap').css('top','-9px');
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周期试验完成</title>
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        button{
+            cursor: pointer;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 80px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        .down .title{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .title .box{
+            width: 80%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .down .title .box p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down .content{
+            width: 80%;
+            height: calc(100% - 55px);
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .down .content .tips{
+            width: 100%;
+            /*height: 60px;*/
+            display: flex;
+            justify-content: center;
+        }
+        .down .content .tips p{
+            font-size: 48px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+        }
+        .down .content .table{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            margin-top: 3%;
+        }
+        .down .content .table table{
+            border-collapse: collapse;
+        }
+        .down .content .table table td{
+            width: 500px;
+            height: 30px;
+            border: 1px solid #CECECE;
+            padding: 20px;
+        }
+        .down .content .table table tr td:first-child{
+            text-align: right;
+            background: #EEEEEE;
+            border-radius: 0px 0px 0px 0px;
+            opacity: 1;
+        }
+        .down .content .finish{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .down .content .finish img{
+            position: relative;
+            top: 0px;
+            left: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <p>行为决策实验平台</p>
+        </div>
+        <!-- <form action="/demo/Expconfiguration" method="post"> -->
+            <div class="down">
+                <div class="title">
+                    <div class="box">
+                        <p>第 <p class="testSessionId"></p>场</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tips">
+                        <p>您已完成本周期实验的全部任务，您的实验收益如下：</p>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <td>投资任务收益</td>
+                                <td><span class="investmentIncome"></span>点</td>
+                            </tr>
+                            <tr>
+                                <td>努力任务收益</td>
+                                <td><span class="hardworkIncome"></span>点</td>
+                            </tr>
+                            <tr>
+                                <td>总收益</td>
+                                <td><span class="totalIncome"></span>点</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="finish">
+                        <img src="../../../static/img/finish.png" alt="">
+                    </div>
+                </div>
+            </div>
+        <!-- </form> -->
+    </div>
+
+    <script>
+        $(function(){
+            $('.testSessionId').text(sessionStorage.getItem('testSessionId'))
+            $.ajax({
+                type: "post",
+                url: '/profitController/stageProfit',
+                success: function(res) {
+                    console.log(res)
+                    $('.investmentIncome').text(Math.round(res.investmentIncome));
+                    $('.hardworkIncome').text(Math.round(res.hardworkIncome));
+                    $('.totalIncome').text(Math.round(res.totalIncome));
+                }
+                });
+        })
+        $.ajax({
+            type: "post",
+            url: '/down/finishTime',
+            success: function(res) {
+                console.log(res)
+                timeController(res)
+                // $('.startTime').html(res);
+            }
+        });
+        function timeController(initMinData){
+            time = initMinData;
+        }
+        //设置倒计时时间
+        let time = 10;
+        var stayTime = time;
+        var countDown = setInterval(function(){
+            time--;
+            if(time == 0){
+                window.location.href = '/JumpPage/halfTime'
+                // var data = {
+                //     'page_Flag':"wait",
+                //     'page_Flag_Explain':"实验开始等待页面1",
+                //     'module_Name':"计时器",
+                //     'select_Condition':"自动",
+                //     'stop_Time':stayTime
+                // };
+                // console.log(data)
+                // $.ajax({
+                //     url: '/action/SaveAction',
+                //     type: 'post',
+                //     data:data,
+                //     async: true,
+                //     success: function (res) {
+                //         console.log(res);
+                //         clearInterval(countDown);
+                //         console.log('跳转')
+                //         window.location.href = '/JumpPage/configuration'
+                //     },
+                //     error: function (e) {
+                //         console.log(e)
+                //     }
+                // })
+            }
+        },1000)
+    </script>
+</body>
+</html>

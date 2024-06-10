@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问卷</title>
+    <link rel="stylesheet" href="../../../static/js/layer/layui/css/layui.css">
+    <script src="../../../static/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../static/js/layer/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../../static/js/jquery.cxdialog.css">
+    <script src="../../../static/js/jquery.cxdialog.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            /*min-width: 1500px;*/
+            overflow: hidden;
+        }
+        .top{
+            width: 100%;
+            height: 80px;
+            /*min-width: 1400px;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../../static/img/title_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        .top p{
+            font-size: 46px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing:10px;
+        }
+        .title{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #D8D8D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+        }
+        .title .box{
+            width: 80%;
+            height: 55px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .title .box p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 23px;
+        }
+        .down{
+            width: 100%;
+            height: calc(100% - 157px);
+            /*min-width: 1400px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+        .down .content{
+            width: 80%;
+            /* height: 1500px; */
+            margin: 0 auto;
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+        .nameContent{
+            font-size: 16px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            color: #333333;
+            line-height: 32px;
+        }
+        .subject{
+            width: 100%;
+            margin-top: 26px;
+        }
+        .subjectTitle{
+            font-size: 16px;
+            line-height: 32px;
+        }
+        span{
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        .subjectContent{
+            margin-left: 40px;
+        }
+        input{
+            font-size: 16px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 4px;
+            opacity: 1;
+            border: 1px solid #DDDDDD;
+        }
+        .inputText{
+            width: 220px;
+            height: 30px;
+        }
+        .inputRadio{
+            margin-left: 50px;
+        }
+        .down .content .btn{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .down .content .btn button{
+            width: 300px;
+            height: 75px;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+        }
+        .down .content .confirm{
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border: 1px solid #0256FF;
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            color: #FFFFFF;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="top">
+        <p>行为决策实验平台</p>
+    </div>
+    <div class="title">
+        <div class="box">
+            <p>第 <p class="testSessionId"></p>场</p>
+            <p style="margin-left: 50px">实验阶段：第<p class="testStageId"></p>5阶段</p>
+        </div>
+    </div>
+    <div class="down">
+        <div class="content">
+            <div class="nameContent">
+                感谢您参与本场实验，下面这些问题能帮助我们更好地了解您的一些背景。
+            </div>
+            <div class="nameContent">
+                您对这些问题的回答不会影响您的实验报酬；同时，您的回答将被严格保密。
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(1) 您的性别：</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='sex' value='女'><span>女</span>
+                    <input type='radio' class="inputRadio" name='sex' value='男'><span>男</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(2) 您的年龄：</div>
+                <div class="subjectContent">
+                    <input type='text' class="inputText" name='age' value='' placeholder="请输入您的年龄">
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(3) 您的年级是？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='grade' value='大一'><span>大一</span>
+                    <input type='radio' class="inputRadio" name='grade' value='大二'><span>大二</span>
+                    <input type='radio' class="inputRadio" name='grade' value='大三'><span>大三</span>
+                    <input type='radio' class="inputRadio" name='grade' value='大四'><span>大四</span>
+                    <input type='radio' class="inputRadio" name='grade' value='硕士'><span>硕士</span>
+                    <input type='radio' class="inputRadio" name='grade' value='博士'><span>博士</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(4) 您的主修专业是？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='major' value='经济学/金融学'><span>经济学/金融学</span>
+                    <input type='radio' class="inputRadio" name='major' value='心理学/认知科学'><span>心理学/认知科学</span>
+                    <input type='radio' class="inputRadio" name='major' value='商科/管理'><span>商科/管理</span>
+                    <input type='radio' class="inputRadio" name='major' value='法学'><span>法学</span>
+                    <input type='radio' class="inputRadio" name='major' value='其他社会科学'><span>其他社会科学</span>
+                    <input type='radio' class="inputRadio" name='major' value='人文学科'><span>人文学科</span>
+                    <input type='radio' class="inputRadio" name='major' value='数学/统计学/大数据相关'><span>数学/统计学/大数据相关</span>
+                    <input type='radio' class="inputRadio" name='major' value='自然科学（物理、化学、生物等）'><span>自然科学（物理、化学、生物等）</span>
+                    <input type='radio' class="inputRadio" name='major' value='其他'><span>其他</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(5) 您以前是否有参加过经济学行为决策的实验室实验？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='economic' value='有'><span>有</span>
+                    <input type='radio' class="inputRadio" name='economic' value='没有'><span>没有</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(6) 您以前是否有参加过心理学实验室实验？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='psychology' value='有'><span>有</span>
+                    <input type='radio' class="inputRadio" name='psychology' value='没有'><span>没有</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(7) 您来自农村还是城市？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='rural_or_urban' value='农村'><span>农村</span>
+                    <input type='radio' class="inputRadio" name='rural_or_urban' value='城市'><span>城市</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(8) 您是否是党员？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='party_member' value='是'><span>是</span>
+                    <input type='radio' class="inputRadio" name='party_member' value='不是'><span>不是</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(9) 您是否是学生干部？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='student_leader' value='是'><span>是</span>
+                    <input type='radio' class="inputRadio" name='student_leader' value='不是'><span>不是</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(10) 您是否为独生子女？</div>
+                <div class="subjectContent">
+                    <input type='radio' name='only_child' value='是'><span>是</span>
+                    <input type='radio' class="inputRadio" name='only_child' value='不是'><span>不是</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(11) 您在过去三个月中，平均每个月花费了多少钱？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='amount' value='1000元以下'><span>1000元以下</span>
+                    <input type='radio' class="inputRadio" name='amount' value='1000-2000元'><span>1000-2000元</span>
+                    <input type='radio' class="inputRadio" name='amount' value='2000-3000元'><span>2000-3000元</span>
+                    <input type='radio' class="inputRadio" name='amount' value='3000-4000元'><span>3000-4000元</span>
+                    <input type='radio' class="inputRadio" name='amount' value='4000-5000元'><span>4000-5000元</span>
+                    <input type='radio' class="inputRadio" name='amount' value='5000元以上'><span>5000元以上</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(12) 您认为您的金融知识水平如何？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='knowledge' value='非常不好'><span>非常不好</span>
+                    <input type='radio' class="inputRadio" name='knowledge' value='比较不好'><span>比较不好</span>
+                    <input type='radio' class="inputRadio" name='knowledge' value='一般'><span>一般</span>
+                    <input type='radio' class="inputRadio" name='knowledge' value='比较好'><span>比较好</span>
+                    <input type='radio' class="inputRadio" name='knowledge' value='非常好'><span>非常好</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(13) 您有多少年投资股票、基金、外汇或金融衍生产品等风险投资品的经验？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='experience' value='没有经验'><span>没有经验</span>
+                    <input type='radio' class="inputRadio" name='experience' value='少于1年'><span>少于1年</span>
+                    <input type='radio' class="inputRadio" name='experience' value='1至3年'><span>1至3年</span>
+                    <input type='radio' class="inputRadio" name='experience' value='3至5年'><span>3至5年</span>
+                    <input type='radio' class="inputRadio" name='experience' value='5年以上'><span>5年以上</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(14) 您平时在投资中是否会参考专业机构投资顾问（比如银行客户经理、券商投资分析师研究报告等）提供的投资意见？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='reference' value='完全不参考'><span>完全不参考</span>
+                    <input type='radio' class="inputRadio" name='reference' value='基本不参考'><span>基本不参考</span>
+                    <input type='radio' class="inputRadio" name='reference' value='偶尔参考'><span>偶尔参考</span>
+                    <input type='radio' class="inputRadio" name='reference' value='基本参考'><span>基本参考</span>
+                    <input type='radio' class="inputRadio" name='reference' value='完全参考'><span>完全参考</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(15) 您平时在投资中是否相信专业机构投资顾问（比如银行客户经理、券商投资分析师研究报告等）的判断？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='believe' value='完全不相信'><span>完全不相信</span>
+                    <input type='radio' class="inputRadio" name='believe' value='基本不相信'><span>基本不相信</span>
+                    <input type='radio' class="inputRadio" name='believe' value='偶尔相信'><span>偶尔相信</span>
+                    <input type='radio' class="inputRadio" name='believe' value='基本相信'><span>基本相信</span>
+                    <input type='radio' class="inputRadio" name='believe' value='完全相信'><span>完全相信</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(16) 假设银行的年利率是5%，通货膨胀率每年是3%，把100元钱存银行一年之后能够买到的东西将？</div>
+                <div class="subjectContent">
+                    <input type='radio'  name='test1' value='比一年前多'><span>比一年前多</span>
+                    <input type='radio' class="inputRadio" name='test1' value='跟一年前一样多'><span>跟一年前一样多</span>
+                    <input type='radio' class="inputRadio" name='test1' value='比一年前少'><span>比一年前少</span>
+                </div>
+            </div>
+            <div class="subject">
+                <div class="subjectTitle">(17) 假如您与一位陌生人意外获得了100元，您有权决定这100元在您与他/她之间如何分配，而他/她只能接受您的分配方案。请问您愿意分配给他/她多少元钱？</div>
+                <div class="subjectContent">
+                    <input type='text' class="inputText" name='test2' value='' placeholder="请输0-100之间的整数">
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit" class="confirm">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let staytime = 0;
+    var countDown = setInterval(function(){
+        staytime++;
+    },1000)
+    $('.testSessionId').text(sessionStorage.getItem('testSessionId'))
+    //点击提交跳转
+    $('.confirm').click(function () {
+        const sex = $("input[name='sex']:checked").val();
+        const age = $("input[name='age']").val();
+        const grade = $("input[name='grade']:checked").val();
+        const major = $("input[name='major']:checked").val();
+        const economic = $("input[name='economic']:checked").val();
+        const psychology = $("input[name='psychology']:checked").val();
+        const rural_or_urban = $("input[name='rural_or_urban']:checked").val();
+        const party_member = $("input[name='party_member']:checked").val();
+        const student_leader = $("input[name='student_leader']:checked").val();
+        const only_child = $("input[name='only_child']:checked").val();
+        const amount = $("input[name='amount']:checked").val();
+        const knowledge = $("input[name='knowledge']:checked").val();
+        const experience = $("input[name='experience']:checked").val();
+        const reference = $("input[name='reference']:checked").val();
+        const believe = $("input[name='believe']:checked").val();
+        const test1 = $("input[name='test1']:checked").val();
+        const test2 = $("input[name='test2']").val();
+
+        var data = {
+            "1":sex,
+            "2":age,
+            "3":grade,
+            "4":major,
+            "5":economic,
+            "6":psychology,
+            "7":rural_or_urban,
+            "8":party_member,
+            "9":student_leader,
+            "10":only_child,
+            "11":amount,
+            "12":knowledge,
+            "13":experience,
+            "14":reference,
+            "15":believe,
+            "16":test1,
+            "17":test2,
+        };
+        var flag = 0;
+        if(sex == undefined||age == ''||grade == undefined||major == undefined||
+            economic == undefined||psychology == undefined||rural_or_urban == undefined||
+            party_member == undefined||student_leader == undefined||only_child == undefined||
+            amount == undefined||knowledge == undefined||experience == undefined||reference == undefined
+            ||believe == undefined||test1 == undefined||test2 == ''){
+            flag =1;
+        }
+        var actionData = {
+            'page_Flag':"questionnaire",
+            'page_Flag_Explain':"问卷页面",
+            'module_Name':"按钮",
+            'select_Condition':"确认",
+            'stop_Time':staytime
+        };
+        console.log(data);
+        if(flag){
+            // alert("请完成全部选择后提交。")
+            $.cxDialog({
+                title: '提示',
+                info: '请完成全部选择后提交。',
+                ok: function(){}
+            });
+            allData = [];
+            flag = 0;
+        }else {
+            //解绑按钮
+            $(this).unbind('click')
+            $.ajax({
+                url: '/quest/SaveQuest',
+                type: 'post',
+                contentType:'application/json',
+                data:JSON.stringify(data),
+                async: true,
+                success: function (res) {
+                    console.log(res);
+                    $.ajax({
+                        url: '/action/SaveAction',
+                        type: 'post',
+                        data:actionData,
+                        async: true,
+                        success: function (res) {
+                            console.log(res);
+                            clearInterval(countDown);
+                            window.location.href = '/JumpPage/end';
+                        },
+                        error: function (e) {
+                            console.log(e)
+                        }
+                    })
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
