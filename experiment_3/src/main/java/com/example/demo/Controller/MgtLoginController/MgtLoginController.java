@@ -70,12 +70,12 @@ public class MgtLoginController {
 //        Map<String, Object> result = new HashMap<>(2);
         if ("".equals(user) || "".equals(password)) {
             System.out.println("+++");
-            return "/views/modules/management/login.html";
+            return "/views/modules/management/main.html";
         }
         if (mgtLoginService.checkIsUser(param) == 0) {
             System.out.println("______");
             System.out.println("______");
-            return "/views/modules/management/login.html";
+            return "/views/modules/management/main.html";
         }
 //        else {
 //            HttpSession session = request.getSession();
