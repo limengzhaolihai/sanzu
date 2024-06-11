@@ -20,7 +20,7 @@ import java.util.List;
  * @author bosonghua
  * @date 2022/11/1 - 9:01
  */
-@Serv
+@Service
 public class ProfitServiceImpl implements ProfitService {
 
     @Autowired
