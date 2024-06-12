@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基金情况</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .content .title {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #D8D8D8;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 23px;
+            letter-spacing: 1px;
+        }
+
+        .content .title .blue {
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            border-radius: 100px 100px 100px 100px;
+            opacity: 1;
+            margin: 0 10px 0 20px;
+        }
+
+        .content table {
+            width: 95%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .content table thead {
+            height: 40px;
+            background-color: #EEEEEE;
+            opacity: 1;
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #333333;
+            line-height: 16px;
+        }
+
+        .content table tbody {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+
+        .content table span {
+            margin: 0 10px;
+        }
+
+        .content table th,
+        .content table td {
+            height: 40px;
+            border: 1px solid #CECECE;
+            text-align: center;
+        }
+
+        .content table td span {
+            font-size: 14px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .content table td .edit {
+            color: #ecc136;
+        }
+
+        .content table td .del {
+            color: #FA5151;
+        }
+
+        .content table td .view {
+            color: #3662EC;
+        }
+
+        .content .btn {
+            width: 95%;
+            margin-top: 15px;
+        }
+
+        .content .btn button {
+            width: 115px;
+            height: 40px;
+            background: linear-gradient(90deg, #0256FF 0%, #4F7BFF 100%);
+            box-shadow: 0px 4px 10px 0px #0859FF;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #4F7BFF;
+            opacity: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 35px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .layui-layer-btn a {
+            width: 150px !important;
+            height: 50px !important;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            font-size: 16px;
+            font-family: Source Han Sans CN-Bold, Source Han Sans CN;
+            font-weight: bold;
+            line-height: 35px;
+            letter-spacing: 1px;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .layui-layer-btn a:last-child {
+            background: #eee !important;
+            box-shadow: 0px 4px 10px 0px #eee !important;
+            border: 1px solid #ccc !important;
+            color: #333 !important;
+        }
+    </style>
+</head>
+
+<body>
+<div class="content">
+    <div class="title">
+        <div class="blue"></div>
+        <span>努力任务信息</span>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>努力任务编号</th>
+            <th>加数1</th>
+            <th>加数2</th>
+            <th>结果</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<script src="../../../static/js/jquery-1.8.3.min.js"></script>
+<script src="../../../static/js/layer/layer.js"></script>
+<script src="../../../static/js/layer/layui/layui.js"></script>
+<script>
+    const priex = "/demo/hard";
+
+    function init() {
+        var url = priex + '/list'
+        $.ajax({
+            type: "get",
+            url: url,
+            success: function(response) {
+                if (response.code == 200) {
+                    render(response.data)
+                }
+            }
+        })
+    }
+
+    function render(rdata) {
+        $('tbody').empty();
+        var html = "";
+        rdata.forEach(e => {
+            html += "<tr id='" + e.id + "'>" +
+                "<td>" +e.id+ "</td>" +
+                "<td>" +e.numF+ "</td>" +
+                "<td>" +e.numS+ "</td>" +
+                "<td>" +e.result+ "</td>" +
+                "<td><span class='del'>删除</span></td>"+
+                "</tr>";
+        })
+        $('tbody').html(html);
+    }
+
+    // 删除
+    $('tbody').on('click', 'tr td .del', function() {
+        let id = $(this).parent().parent().attr('id')
+        var url = priex + "/remove/" + id;
+
+        $.ajax({
+            type: "get",
+            url: url,
+            success: function(response) {
+                init()
+            }
+        })
+    })
+
+    $(function() {
+        init()
+    })
+</script>
+</body>
+
+</html>
